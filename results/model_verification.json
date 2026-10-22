@@ -1,0 +1,168 @@
+{
+  "paper": "Villacr\u00e9s et al. 2016, IJCSR Vol.1, Eqs. (21)-(30)",
+  "g_investigation": {
+    "table1_value": 9.8,
+    "candidates": {
+      "9.8": {
+        "max_abs_dev_A1_vs_eq21": 0.7110040448681048,
+        "max_abs_dev_B1_vs_eq22": 0.002340441133924287
+      },
+      "9.81": {
+        "max_abs_dev_A1_vs_eq21": 0.0030902529809395674,
+        "max_abs_dev_B1_vs_eq22": 0.002340441133924287
+      }
+    },
+    "selected": 9.81,
+    "note": "Table 1 prints g = 9.8 but Eqs. (21)-(22) are reproduced to published rounding accuracy only with g = 9.81; 9.81 is the Params default and can be overridden with Params(g=9.8)."
+  },
+  "parameters": {
+    "g": 9.81,
+    "m": 0.03,
+    "R": 0.021,
+    "M": 0.6,
+    "W": 0.09,
+    "D": 0.05,
+    "H": 0.26,
+    "L": 0.13,
+    "Jw": 6.615e-06,
+    "Jpsi": 0.0033800000000000006,
+    "Jphi": 0.00053,
+    "Jm": 1e-05,
+    "Rm": 6.69,
+    "Kb": 0.468,
+    "Kt": 0.317,
+    "n": 1.0,
+    "fm": 0.0022,
+    "fw": 0.0,
+    "T0": 0.01
+  },
+  "continuous": {
+    "A1": [
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        -698.3008214612087,
+        -416.80309025298095,
+        416.8030902529809
+      ],
+      [
+        0.0,
+        139.95795636072637,
+        53.407604840180916,
+        -53.407604840180916
+      ]
+    ],
+    "B1": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        405.11234044113394,
+        405.11234044113394
+      ],
+      [
+        -51.90959544236772,
+        -51.90959544236772
+      ]
+    ],
+    "max_abs_dev_A1_vs_eq21": 0.0030902529809395674,
+    "max_abs_dev_B1_vs_eq22": 0.002340441133924287
+  },
+  "ac_singularity": {
+    "rank": 3,
+    "condition_number": "inf",
+    "singular": true,
+    "method": "Eq. (24) needs Ac^-1 but Ac has a zero first column; Bd taken from augmented expm expm([[Ac,Bc],[0,0]]*T0) = [[Ad,Bd],[0,I]]."
+  },
+  "discrete": {
+    "T0": 0.01,
+    "Ad": [
+      [
+        1.0,
+        -0.010246614286517651,
+        0.003000630806234584,
+        0.006954311474476249
+      ],
+      [
+        0.0,
+        1.0038389003802743,
+        0.0008974240666459286,
+        0.009116766896672152
+      ],
+      [
+        0.0,
+        -1.1220317350317748,
+        0.12074092641749408,
+        0.8690124592959884
+      ],
+      [
+        0.0,
+        0.6492921005374449,
+        0.11285555959208822,
+        0.8909833407881863
+      ]
+    ],
+    "Bd": [
+      [
+        0.006803046575246933,
+        0.006803046575246933
+      ],
+      [
+        -0.0008722525636421479,
+        -0.0008722525636421479
+      ],
+      [
+        0.8545970734931821,
+        0.8545970734931821
+      ],
+      [
+        -0.10969011734148898,
+        -0.10969011734148898
+      ]
+    ],
+    "max_abs_dev_Ad_vs_eq25": 0.00029210053744488373,
+    "max_abs_dev_Bd_vs_eq26": 2.7747436357852037e-05,
+    "cont2discrete_max_abs_dev": 0.0,
+    "discretization_method": "augmented-matrix expm (ZOH)"
+  },
+  "poles": {
+    "computed": [
+      1.0702565356476206,
+      1.0,
+      0.9362488531379598,
+      0.009057778800375131
+    ],
+    "published": [
+      1.0,
+      0.0091,
+      1.0703,
+      0.9362
+    ],
+    "max_abs_dev": 4.885313795977009e-05
+  },
+  "tolerances": {
+    "A1_B1": 1.0,
+    "Ad_Bd": 0.01,
+    "poles": 0.005,
+    "cont2discrete": 1e-09
+  },
+  "all_passed": true,
+  "failures": [],
+  "method_notes": "All entries recomputed from Table 1 via Eqs. (6)-(20); published matrices used only for verification. Bd by augmented expm because Ac is singular."
+}
