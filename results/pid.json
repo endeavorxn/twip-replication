@@ -1,0 +1,363 @@
+{
+  "paper": "Villacr\u00e9s et al. 2016, Section 3.1, Eqs. (31)-(35), Tables 2-3",
+  "wiring_investigation": {
+    "summed, E=-x (as printed)": {
+      "max_x_excited_pole": 0.9999058472654354,
+      "n_unit_circle_modes": 1,
+      "verdict": "marginally stable",
+      "poles": [
+        "+1.00000000",
+        "+0.99990585",
+        "+0.98155656",
+        "+0.95413853",
+        "+0.852921+0.201678j",
+        "+0.852921-0.201678j",
+        "-0.312940-0.122307j",
+        "-0.312940+0.122307j",
+        "-0.000000+0.000000j",
+        "-0.000000-0.000000j"
+      ]
+    },
+    "one loop per motor, E=-x": {
+      "max_x_excited_pole": 0.999906275847035,
+      "n_unit_circle_modes": 1,
+      "verdict": "marginally stable",
+      "poles": [
+        "+1.00000000",
+        "+0.99990628",
+        "+0.992363+0.028921j",
+        "+0.992363-0.028921j",
+        "+0.92090008",
+        "+0.57952412",
+        "-0.234747-0.148633j",
+        "-0.234747+0.148633j",
+        "-0.000000+0.000000j",
+        "-0.000000-0.000000j"
+      ]
+    },
+    "summed, overall sign flipped": {
+      "max_x_excited_pole": 1.1714521977318455,
+      "n_unit_circle_modes": 1,
+      "verdict": "UNSTABLE",
+      "poles": [
+        "+1.17145220",
+        "+1.00000000",
+        "+0.99990497",
+        "+0.99403400",
+        "+0.93978865",
+        "+0.064772+0.578292j",
+        "+0.064772-0.578292j",
+        "-0.21916163",
+        "+0.00000008",
+        "-0.00000008"
+      ]
+    }
+  },
+  "wiring_assumption": "u_left = u_right = u_psi + u_theta; each loop on E = -x_i with x_ref = 0 (Eq. 35).  The paper never states the wiring; E=-x is forced by stability (sign flip diverges), summed-vs-split is unidentifiable with identical Bd columns.",
+  "ise_window_sweep": {
+    "literal_unsaturated": [
+      {
+        "window_s": 2.0,
+        "ise_psi_x1e3": 1.6893104648109243,
+        "ise_theta_x1e3": 267.6680778698863,
+        "ratio_psi": 6.233617951331825,
+        "ratio_theta": 0.5082948687236732
+      },
+      {
+        "window_s": 3.0,
+        "ise_psi_x1e3": 1.6893161838853339,
+        "ise_theta_x1e3": 267.7312937486865,
+        "ratio_psi": 6.2336390549274325,
+        "ratio_theta": 0.5084149140689072
+      },
+      {
+        "window_s": 4.0,
+        "ise_psi_x1e3": 1.689316319660663,
+        "ise_theta_x1e3": 267.7328636025859,
+        "ratio_psi": 6.233639555943407,
+        "ratio_theta": 0.5084178951815153
+      },
+      {
+        "window_s": 5.0,
+        "ise_psi_x1e3": 1.6893163226238117,
+        "ise_theta_x1e3": 267.7329329285111,
+        "ratio_psi": 6.233639566877534,
+        "ratio_theta": 0.5084180268296832
+      },
+      {
+        "window_s": 6.0,
+        "ise_psi_x1e3": 1.6893163226880854,
+        "ise_theta_x1e3": 267.73294765631994,
+        "ratio_psi": 6.233639567114707,
+        "ratio_theta": 0.5084180547974173
+      },
+      {
+        "window_s": 8.0,
+        "ise_psi_x1e3": 1.6893163226895103,
+        "ise_theta_x1e3": 267.73296727451776,
+        "ratio_psi": 6.233639567119965,
+        "ratio_theta": 0.5084180920518758
+      },
+      {
+        "window_s": 10.0,
+        "ise_psi_x1e3": 1.6893163226895112,
+        "ise_theta_x1e3": 267.73298546372973,
+        "ratio_psi": 6.233639567119968,
+        "ratio_theta": 0.5084181265927266
+      }
+    ],
+    "primary_sat12V": [
+      {
+        "window_s": 2.0,
+        "ise_psi_x1e3": 0.29536230424205623,
+        "ise_theta_x1e3": 502.82407917483005,
+        "ratio_psi": 1.089897801631204,
+        "ratio_theta": 0.9548501313612422
+      },
+      {
+        "window_s": 3.0,
+        "ise_psi_x1e3": 0.2954098123360998,
+        "ise_theta_x1e3": 503.0736696530437,
+        "ratio_psi": 1.090073108251291,
+        "ratio_theta": 0.9553240973282259
+      },
+      {
+        "window_s": 4.0,
+        "ise_psi_x1e3": 0.29541086700389696,
+        "ise_theta_x1e3": 503.0960639643899,
+        "ratio_psi": 1.09007700001438,
+        "ratio_theta": 0.955366623555621
+      },
+      {
+        "window_s": 5.0,
+        "ise_psi_x1e3": 0.29541088989542696,
+        "ise_theta_x1e3": 503.14297472322056,
+        "ratio_psi": 1.0900770844849705,
+        "ratio_theta": 0.955455705892937
+      },
+      {
+        "window_s": 6.0,
+        "ise_psi_x1e3": 0.295410890390006,
+        "ise_theta_x1e3": 503.1938947772312,
+        "ratio_psi": 1.0900770863099853,
+        "ratio_theta": 0.9555524017797784
+      },
+      {
+        "window_s": 8.0,
+        "ise_psi_x1e3": 0.2954108904006727,
+        "ise_theta_x1e3": 503.29447637687105,
+        "ratio_psi": 1.0900770863493459,
+        "ratio_theta": 0.955743403678069
+      },
+      {
+        "window_s": 10.0,
+        "ise_psi_x1e3": 0.29541089040067564,
+        "ise_theta_x1e3": 503.3914803208377,
+        "ratio_psi": 1.0900770863493567,
+        "ratio_theta": 0.9559276116992741
+      }
+    ]
+  },
+  "primary_window": {
+    "window_s": 10.0,
+    "config": "primary_sat12V",
+    "ise_psi_x1e3": 0.29541089040067564,
+    "ise_theta_x1e3": 503.3914803208377,
+    "ratio_psi_vs_table3": 1.0900770863493567,
+    "ratio_theta_vs_table3": 0.9559276116992741,
+    "sweep_shape": {
+      "literal_unsaturated": {
+        "psi_abs_growth_x1e3": 5.857878586867926e-06,
+        "theta_growth_pct": 0.024249284546740135
+      },
+      "primary_sat12V": {
+        "psi_abs_growth_x1e3": 4.858615861941251e-05,
+        "theta_growth_pct": 0.1128428747761534
+      }
+    }
+  },
+  "saturation_identification": {
+    "paper_states_limit": false,
+    "note": "Fig. 4 shows a saturation block but no value.  Scan over symmetric limits; 12 V reproduces both Table 3 PID entries to ~10 % (psi wants >=15 V, theta ~10 V; 12 V is the compromise and the standard supply).",
+    "scan_10s": [
+      {
+        "u_sat_V": 6.0,
+        "ise_psi_x1e3": 0.5106616738760297,
+        "ise_theta_x1e3": 751.4913832596691,
+        "ratio_psi": 1.8843604202067519,
+        "ratio_theta": 1.427063014165722
+      },
+      {
+        "u_sat_V": 9.0,
+        "ise_psi_x1e3": 0.3473815306012387,
+        "ise_theta_x1e3": 551.9889537661,
+        "ratio_psi": 1.2818506664252354,
+        "ratio_theta": 1.0482129771479305
+      },
+      {
+        "u_sat_V": 10.0,
+        "ise_psi_x1e3": 0.3213788996204117,
+        "ise_theta_x1e3": 525.4791423166338,
+        "ratio_psi": 1.1858999985993053,
+        "ratio_theta": 0.9978715197809227
+      },
+      {
+        "u_sat_V": 11.0,
+        "ise_psi_x1e3": 0.30804904640201924,
+        "ise_theta_x1e3": 514.3392961013382,
+        "ratio_psi": 1.1367123483469346,
+        "ratio_theta": 0.9767172352854885
+      },
+      {
+        "u_sat_V": 12.0,
+        "ise_psi_x1e3": 0.29541089040067564,
+        "ise_theta_x1e3": 503.3914803208377,
+        "ratio_psi": 1.0900770863493567,
+        "ratio_theta": 0.9559276116992741
+      },
+      {
+        "u_sat_V": 13.0,
+        "ise_psi_x1e3": 0.2834644316163701,
+        "ise_theta_x1e3": 492.6356949752221,
+        "ratio_psi": 1.0459942126065318,
+        "ratio_theta": 0.9355026490224501
+      },
+      {
+        "u_sat_V": 15.0,
+        "ise_psi_x1e3": 0.26164660569883863,
+        "ise_theta_x1e3": 471.70021558879887,
+        "ratio_psi": 0.9654856298850135,
+        "ratio_theta": 0.8957467063972635
+      },
+      {
+        "u_sat_V": 24.0,
+        "ise_psi_x1e3": 0.1977054013131803,
+        "ise_theta_x1e3": 386.9960648772981,
+        "ratio_psi": 0.7295402262478978,
+        "ratio_theta": 0.7348956795998827
+      }
+    ],
+    "identified_V": 12.0
+  },
+  "settling": {
+    "literal_unsaturated": {
+      "psi_s_2pct_of_initial": 0.73,
+      "theta_s_2pct_of_peak": 1.44
+    },
+    "primary_sat12V": {
+      "psi_s_2pct_of_initial": 1.07,
+      "theta_s_2pct_of_peak": 2.22
+    },
+    "note": "psi band referenced to |psi(0)| = 0.1 rad (twip.simulate.settling_time); theta starts at 0 so its band references max|theta| (peak-referenced helper)."
+  },
+  "control_effort_V2s": {
+    "literal_unsaturated": {
+      "1s": 114.45035714892654,
+      "2s": 114.452241006766,
+      "5s": 114.45229774754611,
+      "10s": 114.45229774816222
+    },
+    "primary_sat12V": {
+      "1s": 5.2388285688831635,
+      "2s": 5.257434828811462,
+      "5s": 5.257879120449795,
+      "10s": 5.25787912605836
+    }
+  },
+  "fig9_claim_record": {
+    "claim": "paper Fig. 9: PID is NOT the lowest-energy starter (LQR is)",
+    "pid_total_both_motors_V2s_10s": 5.25787912605836,
+    "pid_per_motor_V2s_10s": 2.62893956302918,
+    "pid_per_motor_V2s_10s_unsaturated": 57.22614887408111,
+    "metric": "T0*sum(u_l^2) with u_l = u_r = u (identical Bd columns)",
+    "lqr_per_motor_V2s_10s": 374.037625162555,
+    "observed_ordering": "PID per-motor energy 2.629 (sat) / 57.23 (unsat) vs LQR 374 V^2 s over 10 s: our PID is LOWER-energy, i.e. the Fig. 9 ordering is NOT reproduced under this metric - recorded, definition of Fig. 9 'energy' unverified."
+  },
+  "gains": {
+    "psi": {
+      "KP": -77.97,
+      "KI": -0.01,
+      "KD": -8.79
+    },
+    "theta": {
+      "KP": -1.07,
+      "KI": -0.01,
+      "KD": -1.36
+    },
+    "source": "paper Table 2, used exactly as printed (negative)"
+  },
+  "eq34_coeffs": {
+    "psi": [
+      -956.9700499999999,
+      1835.9699499999997,
+      -878.9999999999999
+    ],
+    "theta": [
+      -137.07005,
+      273.06995,
+      -136.0
+    ]
+  },
+  "simulation": {
+    "x0": [
+      0.0,
+      0.1,
+      0.0,
+      0.0
+    ],
+    "T0": 0.01,
+    "run_s": 30.0,
+    "disturbance": null,
+    "u_sat": {
+      "literal_unsaturated": null,
+      "primary_sat12V": 12.0
+    }
+  },
+  "trajectories_first_steps": {
+    "t": [
+      0.0,
+      0.01,
+      0.02,
+      0.03,
+      0.04,
+      0.05,
+      0.06,
+      0.07,
+      0.08,
+      0.09,
+      0.1
+    ],
+    "psi_primary": [
+      0.1,
+      0.0794498285106159,
+      0.05656065514732072,
+      0.035862838535039035,
+      0.018296101116516805,
+      0.00425927643414146,
+      -0.006410687094103418,
+      -0.014121048316293131,
+      -0.01937634217355569,
+      -0.022683801891224178,
+      -0.024504046522407664
+    ],
+    "theta_primary": [
+      0.0,
+      0.1622484563772746,
+      0.34588775426659574,
+      0.5146613566418101,
+      0.6604259209255945,
+      0.7793776154451535,
+      0.8722351298333504,
+      0.9417546722274092,
+      0.9915678948969533,
+      1.0254242531923181,
+      1.0467863622386047
+    ],
+    "u_primary_first3": [
+      12.0,
+      10.37052039035138,
+      9.63554959776205
+    ]
+  },
+  "method_notes": "Incremental law Eq. (34) exactly as printed (trapezoidal integral, first-difference derivative); gains not retuned; primary run adds the Fig. 4 saturation block at the identified +/-12 V limit; ISE = T0*sum(y^2) over window prefixes of one 30 s run per configuration; with-disturbance Table 3 column out of scope for this script."
+}

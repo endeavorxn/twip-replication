@@ -1,0 +1,176 @@
+{
+  "paper": "Villacr\u00e9s et al. 2016, IJCSR Vol.1, Section 3.2, Eqs. (36)-(45)",
+  "design": {
+    "method": "Riccati backward iteration, Eqs. (40)-(42), P(N)=Q, K(N)=0",
+    "gamma": 1e-09,
+    "iterations": 436,
+    "Q_eq43": [
+      0.38,
+      0.43,
+      0.09,
+      0.09
+    ],
+    "R_eq44_printed": 0.00017,
+    "R_effective_scalar": 0.00034,
+    "reduction": "Bd = [b b]; constrained to u_l = u_r = u the plant is (Ad, 2b) with penalty 2r; see module docstring",
+    "K": [
+      -1.099055119819472,
+      -81.4420789942307,
+      -1.36753374389969,
+      -10.860029355917245
+    ],
+    "K_published_eq45": [
+      -1.099,
+      -81.44,
+      -1.368,
+      -10.86
+    ],
+    "max_abs_dev_K_vs_eq45": 0.0020789942307004594,
+    "dare_K": [
+      -1.099055240361731,
+      -81.442080912245,
+      -1.3675337781739831,
+      -10.8600296253367
+    ],
+    "max_abs_dev_K_vs_scipy_dare": 1.9180143056019006e-06,
+    "P_min_eigenvalue": 0.0900011947224658,
+    "unconstrained_2x4_K_rows_identical": true,
+    "max_abs_dev_unconstrained_dare_vs_reduced_dare": 4.25472990173148e-11,
+    "max_abs_dev_unconstrained_dare_vs_iterated_K": 1.9179717583028832e-06
+  },
+  "poles": {
+    "computed": [
+      "0.0000+0.0000j",
+      "0.9318-0.0042j",
+      "0.9318+0.0042j",
+      "0.9797+0.0000j"
+    ],
+    "expected_eq60_61_plus_zero": [
+      "0.0000+0.0000j",
+      "0.9318-0.0042j",
+      "0.9318+0.0042j",
+      "0.9797+0.0000j"
+    ],
+    "max_abs_dev": 4.2566248637477745e-05,
+    "note": "the paper lists only three closed-loop poles (Eqs. 60-61, reused as the SMC design poles); the 4th pole at ~0 (deadbeat) is not mentioned in the paper"
+  },
+  "simulation": {
+    "T0": 0.01,
+    "n_steps": 1000,
+    "x0": [
+      0.0,
+      0.1,
+      0.0,
+      0.0
+    ],
+    "disturbance": null,
+    "u_sat": null,
+    "theta_range_rad": [
+      0.0,
+      1.235831522710837
+    ],
+    "psi_range_rad": [
+      -0.025032527529729225,
+      0.1
+    ]
+  },
+  "ise_sweep": {
+    "1": {
+      "n_samples": 100,
+      "psi_x1e3": 0.4263628924964887,
+      "theta_x1e3": 758.908052584669
+    },
+    "1.5": {
+      "n_samples": 150,
+      "psi_x1e3": 0.42942271659992265,
+      "theta_x1e3": 788.7096000255461
+    },
+    "2": {
+      "n_samples": 200,
+      "psi_x1e3": 0.42993131647865723,
+      "theta_x1e3": 792.5536093783772
+    },
+    "3": {
+      "n_samples": 300,
+      "psi_x1e3": 0.43000707553221545,
+      "theta_x1e3": 793.1099511072445
+    },
+    "4": {
+      "n_samples": 400,
+      "psi_x1e3": 0.4300083247663453,
+      "theta_x1e3": 793.1190986981127
+    },
+    "5": {
+      "n_samples": 500,
+      "psi_x1e3": 0.4300083453067035,
+      "theta_x1e3": 793.1192491025149
+    },
+    "6": {
+      "n_samples": 600,
+      "psi_x1e3": 0.43000834564442747,
+      "theta_x1e3": 793.1192515754592
+    },
+    "8": {
+      "n_samples": 800,
+      "psi_x1e3": 0.43000834565007146,
+      "theta_x1e3": 793.1192516167879
+    },
+    "10": {
+      "n_samples": 1000,
+      "psi_x1e3": 0.4300083456500731,
+      "theta_x1e3": 793.119251616799
+    }
+  },
+  "paper_targets_table3_lqr": {
+    "psi_no_dist_x1e3": 0.393,
+    "theta_no_dist_x1e3": 810.0,
+    "psi_dist_x1e3": 0.622,
+    "theta_dist_x1e3": 947.9
+  },
+  "primary_window_s": 3.0,
+  "primary_window_criterion": "smallest swept window whose psi and theta ISE are within 0.01% of the 10 s value",
+  "best_match_window_s": 1.0,
+  "best_match_mismatch_vs_table3": 0.08489285622516199,
+  "ise_range_over_windows_x1e3": {
+    "psi": [
+      0.4263628924964887,
+      0.4300083456500731
+    ],
+    "theta": [
+      758.908052584669,
+      793.119251616799
+    ]
+  },
+  "control_energy_per_motor": {
+    "u0_V": 8.14420789942307,
+    "sum_u2_first_0p5s": 351.1181548403925,
+    "sum_u2_first_1s": 370.499345764593,
+    "sum_u2_first_2s": 373.97894836505424,
+    "sum_u2_full_10s": 374.037625162555,
+    "fraction_of_full_energy_in_first_1s": 0.9905403115624416
+  },
+  "control_energy_both_motors": {
+    "sum_u2_first_1s": 740.998691529186,
+    "sum_u2_full_10s": 748.07525032511
+  },
+  "settling_time_s": {
+    "psi": 1.36,
+    "theta": 2.33,
+    "tol": 0.02,
+    "theta_band_reference": "peak |theta| (theta(0) = 0)"
+  },
+  "fig9_claim": {
+    "claim": "LQR uses the least energy at the start of the response",
+    "u0_V": 8.14420789942307,
+    "fraction_of_full_energy_in_first_1s": 0.9905403115624416,
+    "note": "recorded here for the LQR; the cross-controller comparison against PID/SMC initial energies is made in the integration stage once those controllers exist"
+  },
+  "tolerances": {
+    "K_vs_eq45": 0.005,
+    "K_vs_dare": 2e-05,
+    "reduction": 1e-09,
+    "poles": 0.0005
+  },
+  "all_passed": true,
+  "failures": []
+}

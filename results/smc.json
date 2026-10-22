@@ -1,0 +1,1051 @@
+{
+  "paper": "Villacr\u00e9s et al. 2016, Section 3.3, Eqs. (46)-(64), Tables 3-4 (SMC rows)",
+  "controller": "Optimal SMC (sliding surface from LQR poles, boundary-layer reaching law)",
+  "investigation": {
+    "sliding_polynomial": {
+      "a1": -2.8433,
+      "a2": 2.6940378000000003,
+      "a3": -0.850643021736
+    },
+    "note_e1_e4_conventions": "The paper describes the surface as Sbar=[a3,a2,a1,1] in e4-companion coordinates; the implementation uses the identical e1-companion reading (Sbar=[1,a1,a2,a3], T = ctrb@W). The two descriptions give the SAME pulled-back surface S = Sbar4 @ J @ T^-1 with J the reversal, i.e. [a3,a2,a1,1]@J = [1,a1,a2,a3].",
+    "variants": [
+      {
+        "source": "computed_g9.81",
+        "b_mode": "sum",
+        "S": [
+          -1.0985280374092605,
+          -75.24512714239528,
+          -0.8423447764689925,
+          -10.590798800745882
+        ],
+        "Sb": 1.0000000000001412,
+        "S_reldev_vs_eq62": [
+          0.4290394815960184,
+          0.49130513431499023,
+          0.4952997145182789,
+          0.4972324329102359
+        ],
+        "S_max_reldev_vs_eq62": 0.4972324329102359,
+        "Keq": [
+          1.0985280374091053,
+          81.45411392517154,
+          1.3677590789249843,
+          10.861865193280263
+        ],
+        "Keq_reldev_vs_eq63": [
+          0.42903948159609906,
+          0.491769427059515,
+          0.4965921682278306,
+          0.49669314706082834
+        ],
+        "Keq_max_reldev_vs_eq63": 0.49669314706082834,
+        "on_manifold_poles": [
+          "(0.9797000000007917+0j)",
+          "(0.9317999999995352+0.00420000000269425j)",
+          "(0.9317999999995352-0.00420000000269425j)"
+        ],
+        "on_manifold_pole_dev": 2.734038558155694e-12,
+        "sliding_poles_realized": true
+      },
+      {
+        "source": "computed_g9.81",
+        "b_mode": "column",
+        "S": [
+          -2.197056074818521,
+          -150.49025428479055,
+          -1.684689552937985,
+          -21.181597601491763
+        ],
+        "Sb": 1.0000000000001414,
+        "S_reldev_vs_eq62": [
+          0.14192103680796317,
+          0.01738973137001951,
+          0.009400570963442191,
+          0.005535134179528212
+        ],
+        "S_max_reldev_vs_eq62": 0.14192103680796317,
+        "Keq": [
+          2.19705607481821,
+          162.90822785034302,
+          2.735518157849968,
+          21.723730386560522
+        ],
+        "Keq_reldev_vs_eq63": [
+          0.1419210368078016,
+          0.016461145880969703,
+          0.006815663544338616,
+          0.006613705878343103
+        ],
+        "Keq_max_reldev_vs_eq63": 0.1419210368078016,
+        "on_manifold_poles": [
+          "(0.9797000000007924+0j)",
+          "(0.931799999999535+0.004200000002693743j)",
+          "(0.931799999999535-0.004200000002693743j)"
+        ],
+        "on_manifold_pole_dev": 2.733577151301783e-12,
+        "sliding_poles_realized": true
+      },
+      {
+        "source": "computed_g9.8",
+        "b_mode": "sum",
+        "S": [
+          -1.0996500752041278,
+          -75.25449835985088,
+          -0.8432051472995811,
+          -10.597520031582649
+        ],
+        "Sb": 0.9999999999999583,
+        "S_reldev_vs_eq62": [
+          0.4284563018689564,
+          0.49124178017651077,
+          0.4947842137210419,
+          0.49691336189970814
+        ],
+        "S_max_reldev_vs_eq62": 0.49691336189970814,
+        "Keq": [
+          1.0996500752041738,
+          81.46056569651212,
+          1.3686306701336763,
+          10.868663475964196
+        ],
+        "Keq_reldev_vs_eq63": [
+          0.4284563018689325,
+          0.491729171420028,
+          0.49627137646901864,
+          0.49637813465714303
+        ],
+        "Keq_max_reldev_vs_eq63": 0.49637813465714303,
+        "on_manifold_poles": [
+          "(0.9797000000001573+0j)",
+          "(0.931799999999922+0.004200000001053493j)",
+          "(0.931799999999922-0.004200000001053493j)"
+        ],
+        "on_manifold_pole_dev": 1.0563722186095941e-12,
+        "sliding_poles_realized": true
+      },
+      {
+        "source": "computed_g9.8",
+        "b_mode": "column",
+        "S": [
+          -2.1993001504082557,
+          -150.50899671970177,
+          -1.6864102945991621,
+          -21.195040063165298
+        ],
+        "Sb": 0.9999999999999578,
+        "S_reldev_vs_eq62": [
+          0.1430873962620872,
+          0.017516439646978483,
+          0.010431572557916179,
+          0.006173276200583729
+        ],
+        "S_max_reldev_vs_eq62": 0.1430873962620872,
+        "Keq": [
+          2.1993001504083485,
+          162.92113139302433,
+          2.737261340267354,
+          21.737326951928402
+        ],
+        "Keq_reldev_vs_eq63": [
+          0.14308739626213543,
+          0.01654165715994456,
+          0.00745724706196317,
+          0.007243730685714413
+        ],
+        "Keq_max_reldev_vs_eq63": 0.14308739626213543,
+        "on_manifold_poles": [
+          "(0.9797000000001553+0j)",
+          "(0.9317999999999227+0.004200000001051271j)",
+          "(0.9317999999999227-0.004200000001051271j)"
+        ],
+        "on_manifold_pole_dev": 1.054107066409608e-12,
+        "sliding_poles_realized": true
+      },
+      {
+        "source": "printed_eq25_26",
+        "b_mode": "sum",
+        "S": [
+          -1.0983535085029348,
+          -73.90889307345442,
+          -0.8196112119803692,
+          -10.40465398222572
+        ],
+        "Sb": 1.0000000000000537,
+        "S_reldev_vs_eq62": [
+          0.4291301930857927,
+          0.5003387479991994,
+          0.508920783714578,
+          0.5060691202361396
+        ],
+        "S_max_reldev_vs_eq62": 0.508920783714578,
+        "Keq": [
+          1.0983535085028757,
+          80.02656176528141,
+          1.34342557217086,
+          10.66304824290144
+        ],
+        "Keq_reldev_vs_eq63": [
+          0.4291301930858234,
+          0.5006765972092007,
+          0.5055481883802503,
+          0.5059057391732802
+        ],
+        "Keq_max_reldev_vs_eq63": 0.5059057391732802,
+        "on_manifold_poles": [
+          "(0.9796999999988407+0j)",
+          "(0.9318000000005753+0.004199999993605507j)",
+          "(0.9318000000005753-0.004199999993605507j)"
+        ],
+        "on_manifold_pole_dev": 6.42032129968167e-12,
+        "sliding_poles_realized": true
+      },
+      {
+        "source": "printed_eq25_26",
+        "b_mode": "column",
+        "S": [
+          -2.1967070170058696,
+          -147.81778614690884,
+          -1.6392224239607385,
+          -20.80930796445144
+        ],
+        "Sb": 1.000000000000054,
+        "S_reldev_vs_eq62": [
+          0.14173961382841457,
+          0.0006774959983988579,
+          0.01784156742915612,
+          0.012138240472279278
+        ],
+        "S_max_reldev_vs_eq62": 0.14173961382841457,
+        "Keq": [
+          2.196707017005751,
+          160.0531235305628,
+          2.6868511443417193,
+          21.326096485802875
+        ],
+        "Keq_reldev_vs_eq63": [
+          0.14173961382835296,
+          0.0013531944184015103,
+          0.011096376760500824,
+          0.01181147834656061
+        ],
+        "Keq_max_reldev_vs_eq63": 0.14173961382835296,
+        "on_manifold_poles": [
+          "(0.9796999999988416+0j)",
+          "(0.9318000000005746+0.00419999999360588j)",
+          "(0.9318000000005746-0.00419999999360588j)"
+        ],
+        "on_manifold_pole_dev": 6.419890173995254e-12,
+        "sliding_poles_realized": true
+      }
+    ],
+    "published_pair_consistency_eq57": [
+      {
+        "source": "computed_g9.81",
+        "b_mode": "sum",
+        "Sb_published": 2.0004651984727775,
+        "Keq": [
+          0.9617762915690042,
+          80.11676245853793,
+          1.3583527260729007,
+          10.787920682570508
+        ],
+        "reldev_vs_eq63": [
+          0.5001162725732826,
+          0.50011379260911,
+          0.5000542046106365,
+          0.5001195179755105
+        ],
+        "max_reldev_vs_eq63": 0.5001195179755105
+      },
+      {
+        "source": "computed_g9.81",
+        "b_mode": "column",
+        "Sb_published": 1.0002325992363885,
+        "Keq": [
+          1.923552583138009,
+          160.2335249170759,
+          2.7167054521458023,
+          21.575841365141024
+        ],
+        "reldev_vs_eq63": [
+          0.00023254514656497526,
+          0.0002275852182199611,
+          0.00010840922127265437,
+          0.00023903595102061213
+        ],
+        "max_reldev_vs_eq63": 0.00023903595102061213
+      },
+      {
+        "source": "computed_g9.8",
+        "b_mode": "sum",
+        "Sb_published": 2.00045515748997,
+        "Keq": [
+          0.961781119059974,
+          80.11086018319867,
+          1.3583569620205893,
+          10.787943867697535
+        ],
+        "reldev_vs_eq63": [
+          0.5001137634823419,
+          0.5001506196842911,
+          0.5000526455573834,
+          0.500118443644987
+        ],
+        "max_reldev_vs_eq63": 0.5001506196842911
+      },
+      {
+        "source": "computed_g9.8",
+        "b_mode": "column",
+        "Sb_published": 1.000227578744985,
+        "Keq": [
+          1.923562238119948,
+          160.22172036639734,
+          2.7167139240411786,
+          21.57588773539507
+        ],
+        "reldev_vs_eq63": [
+          0.00022752696468396918,
+          0.0003012393685822373,
+          0.00010529111476682496,
+          0.00023688728997398826
+        ],
+        "max_reldev_vs_eq63": 0.0003012393685822373
+      },
+      {
+        "source": "printed_eq25_26",
+        "b_mode": "sum",
+        "Sb_published": 2.0090922000000004,
+        "Keq": [
+          0.95764644350319,
+          79.7818034433661,
+          1.3531409857646153,
+          10.740571189316247
+        ],
+        "reldev_vs_eq63": [
+          0.5022627632519803,
+          0.5022037596345785,
+          0.5019724012644037,
+          0.5023135540838586
+        ],
+        "max_reldev_vs_eq63": 0.5023135540838586
+      },
+      {
+        "source": "printed_eq25_26",
+        "b_mode": "column",
+        "Sb_published": 1.0045461,
+        "Keq": [
+          1.9152928870063803,
+          159.56360688673226,
+          2.706281971529231,
+          21.481142378632498
+        ],
+        "reldev_vs_eq63": [
+          0.004525526503960287,
+          0.0044075192691567415,
+          0.00394480252880717,
+          0.004627108167717045
+        ],
+        "max_reldev_vs_eq63": 0.004627108167717045
+      }
+    ],
+    "best_variant": {
+      "source": "printed_eq25_26",
+      "b_mode": "column",
+      "S": [
+        -2.1967070170058696,
+        -147.81778614690884,
+        -1.6392224239607385,
+        -20.80930796445144
+      ],
+      "S_max_reldev_vs_eq62": 0.14173961382841457,
+      "Keq_max_reldev_vs_eq63": 0.14173961382835296
+    },
+    "adopted_variant": {
+      "source": "computed_g9.81",
+      "b_mode": "column",
+      "rationale": "All column variants realize the published sliding poles and max out at the same 14.17-14.31% entry-1 deviation vs Eq. (62) (spread 0.14 pp, tied for practical purposes); computed g=9.81 matrices are the first-principles choice per the project README and are adopted. Printed-matrix b=column wins entry 2 (-147.82 vs published -147.918) but loses entries 3-4; the differences are inside the rounding noise of Eqs. (25)-(26)."
+    },
+    "key_finding": "No variant reproduces Eq. (62) entry 1 (theta coefficient): the CCF design gives -2.197 vs the published -1.924 (14% off) while entries 2-4 agree to 0.6-1.7%. Every candidate that realizes the Eq. (60-61) sliding poles shares this entry-1 gap, and the published Eq. (62)-(63) pair is internally consistent (<=0.5%) only with b = Bd[:,0] and Sb = 1 -- exactly what the CCF construction produces automatically. The residual entry-1 discrepancy is a transcription/derivation artifact of the paper, documented here as the checkpoint's honest finding."
+  },
+  "lqr_identity": {
+    "Keq_b_sum": [
+      1.0985280374091053,
+      81.45411392517154,
+      1.3677590789249843,
+      10.861865193280263
+    ],
+    "published_K_eq45": [
+      -1.099,
+      -81.44,
+      -1.368,
+      -10.86
+    ],
+    "max_abs_diff_vs_negative_published_row": 0.014113925171542974,
+    "closed_loop_poles": [
+      "(-1.8529392425534172e-16+0j)",
+      "(0.931799999999533+0.0042000000027001775j)",
+      "(0.931799999999533-0.0042000000027001775j)",
+      "(0.9797000000007968+0j)"
+    ],
+    "desired_poles": [
+      "(0.9318+0.0042j)",
+      "(0.9318-0.0042j)",
+      "(0.9797+0j)",
+      "0j"
+    ],
+    "max_pole_dev": 2.740257536672964e-12,
+    "passed": true,
+    "explanation": "The one-step reaching law contributes a deadbeat pole at 0, so the ideal SMC closed loop must place {sliding poles} u {0}; these are exactly the LQR closed-loop poles (Eqs. 60-61 were taken from them), and for a single-input system the state-feedback gain realizing a given closed-loop pole set is unique -- hence u_eq = -K_lqr to published rounding."
+  },
+  "boundary_layer": {
+    "reaching_relation": "s(k+1) = Sb_wiring * v(k); in-layer: s(k+1) = -(Sb_wiring*cte/L) * s(k)",
+    "sb_wiring": 2.0000000000002824,
+    "contraction_condition": "0 < Sb_wiring*cte/L < 1  (here L > 2*cte, i.e. L > 2*cte)",
+    "one_step_landing_condition": "Sb_wiring*cte <= L (L >= 2*cte)",
+    "grid": [
+      {
+        "cte": 0.25,
+        "L": 0.5,
+        "factor": 1.0000000000001412,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.23663967460134086,
+        "ise_theta_1e3": 533.554209942193,
+        "max_abs_delta_u_V": 5.0348906127589,
+        "max_abs_delta_u_after_reach_V": 0.6059128415318578,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 0.6037807509014175,
+        "max_abs_u_V": 16.540822785034305
+      },
+      {
+        "cte": 0.25,
+        "L": 1.0,
+        "factor": 0.5000000000000706,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.2351719623444194,
+        "ise_theta_1e3": 542.9182408574968,
+        "max_abs_delta_u_V": 5.0348906127589,
+        "max_abs_delta_u_after_reach_V": 0.005990747876550073,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.37021158171791124,
+        "max_abs_u_V": 16.540822785034305
+      },
+      {
+        "cte": 0.25,
+        "L": 2.0,
+        "factor": 0.2500000000000353,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.2345973258513985,
+        "ise_theta_1e3": 550.2061280509466,
+        "max_abs_delta_u_V": 5.0348906127589,
+        "max_abs_delta_u_after_reach_V": 0.005662156558147835,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.3997592961377824,
+        "max_abs_u_V": 16.540822785034305
+      },
+      {
+        "cte": 0.25,
+        "L": 4.0,
+        "factor": 0.12500000000001765,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.2344664820441721,
+        "ise_theta_1e3": 553.6564031096123,
+        "max_abs_delta_u_V": 5.0348906127589,
+        "max_abs_delta_u_after_reach_V": 0.005466008319430504,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.4159097381815252,
+        "max_abs_u_V": 16.540822785034305
+      },
+      {
+        "cte": 0.25,
+        "L": 8.0,
+        "factor": 0.06250000000000883,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.2344580983637511,
+        "ise_theta_1e3": 554.4734416252314,
+        "max_abs_delta_u_V": 5.0348906127589,
+        "max_abs_delta_u_after_reach_V": 0.005353491091424967,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.42388793284238213,
+        "max_abs_u_V": 16.540822785034305
+      },
+      {
+        "cte": 0.25,
+        "L": 16.0,
+        "factor": 0.03125000000000441,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.23420709879803703,
+        "ise_theta_1e3": 553.7478893362616,
+        "max_abs_delta_u_V": 5.014912325954397,
+        "max_abs_delta_u_after_reach_V": 0.005287686540781322,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.42736861972088497,
+        "max_abs_u_V": 16.52596380735429
+      },
+      {
+        "cte": 0.5,
+        "L": 0.5,
+        "factor": 2.0000000000002824,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.23379643662950053,
+        "ise_theta_1e3": 572.9521628667345,
+        "max_abs_delta_u_V": 5.621022196551955,
+        "max_abs_delta_u_after_reach_V": 1.2151910711915255,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 1.547787434993854,
+        "max_abs_u_V": 16.790822785034305
+      },
+      {
+        "cte": 0.5,
+        "L": 1.0,
+        "factor": 1.0000000000001412,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.23741059849136228,
+        "ise_theta_1e3": 545.5641190258439,
+        "max_abs_delta_u_V": 5.621022196551955,
+        "max_abs_delta_u_after_reach_V": 1.2116339151398172,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 1.207425980202283,
+        "max_abs_u_V": 16.790822785034305
+      },
+      {
+        "cte": 0.5,
+        "L": 2.0,
+        "factor": 0.5000000000000706,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.23523721182420346,
+        "ise_theta_1e3": 550.2710025221381,
+        "max_abs_delta_u_V": 5.621022196551955,
+        "max_abs_delta_u_after_reach_V": 0.006045554221720317,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.37402338043488614,
+        "max_abs_u_V": 16.790822785034305
+      },
+      {
+        "cte": 0.5,
+        "L": 4.0,
+        "factor": 0.2500000000000353,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.2350282043481476,
+        "ise_theta_1e3": 555.5446462462734,
+        "max_abs_delta_u_V": 5.621022196551955,
+        "max_abs_delta_u_after_reach_V": 0.005701422633143605,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.4026072858323161,
+        "max_abs_u_V": 16.790822785034305
+      },
+      {
+        "cte": 0.5,
+        "L": 8.0,
+        "factor": 0.12500000000001765,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.2349279439027134,
+        "ise_theta_1e3": 556.6103191910547,
+        "max_abs_delta_u_V": 5.621022196551955,
+        "max_abs_delta_u_after_reach_V": 0.0054867620328206135,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.4174892063516258,
+        "max_abs_u_V": 16.790822785034305
+      },
+      {
+        "cte": 0.5,
+        "L": 16.0,
+        "factor": 0.06250000000000883,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.23432215920942207,
+        "ise_theta_1e3": 555.0246544257869,
+        "max_abs_delta_u_V": 5.581065622942923,
+        "max_abs_delta_u_after_reach_V": 0.005357421905637372,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.42419693525803975,
+        "max_abs_u_V": 16.761104829674274
+      },
+      {
+        "cte": 1.0,
+        "L": 0.5,
+        "factor": 4.000000000000565,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.23984072781048238,
+        "ise_theta_1e3": 587.9280408821223,
+        "max_abs_delta_u_V": 6.793285364138049,
+        "max_abs_delta_u_after_reach_V": 2.425249211941341,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 2.655293763499374,
+        "max_abs_u_V": 17.290822785034305
+      },
+      {
+        "cte": 1.0,
+        "L": 1.0,
+        "factor": 2.0000000000002824,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.23941822016242412,
+        "ise_theta_1e3": 588.956443149234,
+        "max_abs_delta_u_V": 6.793285364138049,
+        "max_abs_delta_u_after_reach_V": 2.4251899084047692,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 2.661541299292934,
+        "max_abs_u_V": 17.290822785034305
+      },
+      {
+        "cte": 1.0,
+        "L": 2.0,
+        "factor": 1.0000000000001412,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.24259072087047934,
+        "ise_theta_1e3": 566.4062276267132,
+        "max_abs_delta_u_V": 6.793285364138049,
+        "max_abs_delta_u_after_reach_V": 2.423442228626726,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 2.414583236577958,
+        "max_abs_u_V": 17.290822785034305
+      },
+      {
+        "cte": 1.0,
+        "L": 4.0,
+        "factor": 0.5000000000000706,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.23660365286334847,
+        "ise_theta_1e3": 560.2766193028156,
+        "max_abs_delta_u_V": 6.793285364138049,
+        "max_abs_delta_u_after_reach_V": 0.0061191641336338365,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.3789951592880419,
+        "max_abs_u_V": 17.290822785034305
+      },
+      {
+        "cte": 1.0,
+        "L": 8.0,
+        "factor": 0.2500000000000353,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.2359609378964966,
+        "ise_theta_1e3": 560.6165651562719,
+        "max_abs_delta_u_V": 6.793285364138049,
+        "max_abs_delta_u_after_reach_V": 0.005737805403464968,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.40522124521949693,
+        "max_abs_u_V": 17.290822785034305
+      },
+      {
+        "cte": 1.0,
+        "L": 16.0,
+        "factor": 0.12500000000001765,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.23448864693062232,
+        "ise_theta_1e3": 557.30318970748,
+        "max_abs_delta_u_V": 6.713372216919984,
+        "max_abs_delta_u_after_reach_V": 0.00549199777452003,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.4178875923085189,
+        "max_abs_u_V": 17.231386874314246
+      },
+      {
+        "cte": 2.0,
+        "L": 0.5,
+        "factor": 8.00000000000113,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.2648654361687896,
+        "ise_theta_1e3": 609.8265291575015,
+        "max_abs_delta_u_V": 9.137811699310237,
+        "max_abs_delta_u_after_reach_V": 4.845165366496202,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 4.875743547918104,
+        "max_abs_u_V": 18.290822785034305
+      },
+      {
+        "cte": 2.0,
+        "L": 1.0,
+        "factor": 4.000000000000565,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.2648728239913292,
+        "ise_theta_1e3": 606.9962101889838,
+        "max_abs_delta_u_V": 9.137811699310237,
+        "max_abs_delta_u_after_reach_V": 4.845145687120235,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 4.874143759149792,
+        "max_abs_u_V": 18.290822785034305
+      },
+      {
+        "cte": 2.0,
+        "L": 2.0,
+        "factor": 2.0000000000002824,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.2642276673680784,
+        "ise_theta_1e3": 606.2168732284828,
+        "max_abs_delta_u_V": 9.137811699310237,
+        "max_abs_delta_u_after_reach_V": 4.845072373882703,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 4.879455131189808,
+        "max_abs_u_V": 18.290822785034305
+      },
+      {
+        "cte": 2.0,
+        "L": 4.0,
+        "factor": 1.0000000000001412,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.2638391127823041,
+        "ise_theta_1e3": 583.4592909304044,
+        "max_abs_delta_u_V": 9.137811699310237,
+        "max_abs_delta_u_after_reach_V": 4.852904740038079,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 4.8141006210174595,
+        "max_abs_u_V": 18.290822785034305
+      },
+      {
+        "cte": 2.0,
+        "L": 8.0,
+        "factor": 0.5000000000000706,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.2377470274574683,
+        "ise_theta_1e3": 567.1841022462467,
+        "max_abs_delta_u_V": 9.137811699310237,
+        "max_abs_delta_u_after_reach_V": 0.006169506935632285,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.3823407013709071,
+        "max_abs_u_V": 18.290822785034305
+      },
+      {
+        "cte": 2.0,
+        "L": 16.0,
+        "factor": 0.2500000000000353,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.23449638969753164,
+        "ise_theta_1e3": 560.8365939827387,
+        "max_abs_delta_u_V": 8.977985404874108,
+        "max_abs_delta_u_after_reach_V": 0.005740555228879729,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.40542518506412284,
+        "max_abs_u_V": 18.171950963594185
+      },
+      {
+        "cte": 4.0,
+        "L": 0.5,
+        "factor": 16.00000000000226,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.3461291996292081,
+        "ise_theta_1e3": 610.4949686721673,
+        "max_abs_delta_u_V": 13.826864369654615,
+        "max_abs_delta_u_after_reach_V": 9.684626144814422,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 9.29789254796975,
+        "max_abs_u_V": 20.290822785034305
+      },
+      {
+        "cte": 4.0,
+        "L": 1.0,
+        "factor": 8.00000000000113,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.34512022267762443,
+        "ise_theta_1e3": 607.7672300873219,
+        "max_abs_delta_u_V": 13.826864369654615,
+        "max_abs_delta_u_after_reach_V": 9.684608919632078,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 9.29646889178278,
+        "max_abs_u_V": 20.290822785034305
+      },
+      {
+        "cte": 4.0,
+        "L": 2.0,
+        "factor": 4.000000000000565,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.34326576446548707,
+        "ise_theta_1e3": 605.3179737052317,
+        "max_abs_delta_u_V": 13.826864369654615,
+        "max_abs_delta_u_after_reach_V": 9.684663432394775,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 9.289688897973557,
+        "max_abs_u_V": 20.290822785034305
+      },
+      {
+        "cte": 4.0,
+        "L": 4.0,
+        "factor": 2.0000000000002824,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.33766781489678976,
+        "ise_theta_1e3": 599.4079537198279,
+        "max_abs_delta_u_V": 13.826864369654615,
+        "max_abs_delta_u_after_reach_V": 9.68456103237364,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 9.292518060432531,
+        "max_abs_u_V": 20.290822785034305
+      },
+      {
+        "cte": 4.0,
+        "L": 8.0,
+        "factor": 1.0000000000001412,
+        "predicted_stable": false,
+        "chatters": true,
+        "ise_psi_1e3": 0.32886923593857115,
+        "ise_theta_1e3": 610.1514715436971,
+        "max_abs_delta_u_V": 13.826864369654615,
+        "max_abs_delta_u_after_reach_V": 9.684648975716733,
+        "delta_u_sign_alternations_after_reach": 948,
+        "max_abs_s_after_reach": 9.299967579763377,
+        "max_abs_u_V": 20.290822785034305
+      },
+      {
+        "cte": 4.0,
+        "L": 16.0,
+        "factor": 0.5000000000000706,
+        "predicted_stable": true,
+        "chatters": false,
+        "ise_psi_1e3": 0.23299347349282698,
+        "ise_theta_1e3": 564.3550335629348,
+        "max_abs_delta_u_V": 13.507211780782331,
+        "max_abs_delta_u_after_reach_V": 0.0061519486460756,
+        "delta_u_sign_alternations_after_reach": 0,
+        "max_abs_s_after_reach": 0.3812454902981133,
+        "max_abs_u_V": 20.05307914215407
+      }
+    ],
+    "task_nominal_cte1_L0.05": {
+      "cte": 1.0,
+      "L": 0.05,
+      "factor": 40.00000000000565,
+      "max_abs_delta_u_V": 6.793285364138049,
+      "max_abs_delta_u_after_reach_V": 2.425167352023516,
+      "delta_u_sign_alternations_after_reach": 948,
+      "max_abs_s_after_reach": 2.659627749523181,
+      "max_abs_u_V": 17.290822785034305,
+      "ise_psi_1e3": 0.24036554926870524,
+      "ise_theta_1e3": 586.0722010624371,
+      "chatters": true
+    },
+    "stable_cells_ise_psi_1e3": {
+      "min": 0.23299347349282698,
+      "max": 0.2377470274574683
+    },
+    "selected": {
+      "cte": 1.0,
+      "L": 4.0
+    },
+    "sensitivity": "Across all contractive cells (L > 2*cte) the 10-s ISE varies only between 0.233 and 0.238 x10^-3 (psi): the tuning is benign. Every cell with L <= 2*cte -- including the natural first guess L ~ cte and the task's nominal (1.0, 0.05) -- violates the contraction condition and shows persistent Nyquist-rate switching, i.e. chattering. The paper's unstated (cte, L) must have satisfied L > 2*cte in Eq.-62 surface units."
+  },
+  "primary": {
+    "design": {
+      "source": "computed matrices, g=9.81",
+      "b_mode": "column",
+      "b_wiring": "Bd @ [1,1] (scalar u to both motors)",
+      "S": [
+        -2.197056074818521,
+        -150.49025428479055,
+        -1.684689552937985,
+        -21.181597601491763
+      ],
+      "Sb_design": 1.0000000000001414,
+      "Sb_wiring": 2.0000000000002824,
+      "Keq": [
+        2.19705607481821,
+        162.90822785034302,
+        2.735518157849968,
+        21.723730386560522
+      ],
+      "cte": 1.0,
+      "L": 4.0,
+      "contraction_factor": 0.5000000000000706
+    },
+    "ise_psi_1e3_10s": 0.23660365286334847,
+    "ise_theta_1e3_10s": 560.2766193028156,
+    "settling": {
+      "psi_s": 0.42,
+      "theta_s": 3.19,
+      "theta_band_rad": 0.020386390490301564
+    },
+    "chatter": {
+      "max_abs_delta_u_V": 6.793285364138049,
+      "max_abs_delta_u_after_reach_V": 0.0061191641336338365,
+      "delta_u_sign_alternations_after_reach": 0,
+      "max_abs_s_after_reach": 0.3789951592880419,
+      "max_abs_u_V": 17.290822785034305,
+      "no_chattering_verified": true
+    },
+    "literal_layer_max_dev_at_cte1": 0.0,
+    "window_sweep_s": [
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "window_sweep": {
+      "primary": {
+        "ise_psi_1e3": {
+          "2.0": 0.23652981653154795,
+          "3.0": 0.23659839317333073,
+          "4.0": 0.2366032782755486,
+          "5.0": 0.23660362618579828,
+          "6.0": 0.23660365096345778,
+          "8.0": 0.23660365285376078,
+          "10.0": 0.23660365286334847
+        },
+        "ise_theta_1e3": {
+          "2.0": 556.7689478953041,
+          "3.0": 560.0268077821148,
+          "4.0": 560.2588280935948,
+          "5.0": 560.2753522410621,
+          "6.0": 560.2765290666862,
+          "8.0": 560.2766188474404,
+          "10.0": 560.2766193028156
+        },
+        "max_abs_u_V": 17.290822785034305
+      },
+      "ideal_eq_column": {
+        "ise_psi_1e3": {
+          "2.0": 0.23400180753910818,
+          "3.0": 0.23406955481285874,
+          "4.0": 0.23407540190866763,
+          "5.0": 0.23407590646333043,
+          "6.0": 0.23407595000207224,
+          "8.0": 0.23407595408329115,
+          "10.0": 0.23407595411368065
+        },
+        "ise_theta_1e3": {
+          "2.0": 547.5648795156444,
+          "3.0": 551.9604937060898,
+          "4.0": 552.3397978499981,
+          "5.0": 552.3725285458482,
+          "6.0": 552.3753529242895,
+          "8.0": 552.3756176748506,
+          "10.0": 552.3756196462389
+        },
+        "max_abs_u_V": 16.290822785034305
+      },
+      "ideal_eq_sum": {
+        "ise_psi_1e3": {
+          "2.0": 0.42979365167199735,
+          "3.0": 0.4298666183060928,
+          "4.0": 0.4298678287092879,
+          "5.0": 0.4298678487337725,
+          "6.0": 0.4298678490650432,
+          "8.0": 0.4298678490706141,
+          "10.0": 0.4298678490706158
+        },
+        "ise_theta_1e3": {
+          "2.0": 792.8598839689679,
+          "3.0": 793.3991420531621,
+          "4.0": 793.4080633626761,
+          "5.0": 793.4082109504011,
+          "6.0": 793.4082133919862,
+          "8.0": 793.4082134330463,
+          "10.0": 793.4082134330573
+        },
+        "max_abs_u_V": 8.145411392517154
+      },
+      "b_sum_design_cte1_L4": {
+        "ise_psi_1e3": {
+          "2.0": 0.41777990215167043,
+          "3.0": 0.4178514973822425,
+          "4.0": 0.41785268501891565,
+          "5.0": 0.41785270466675656,
+          "6.0": 0.41785270499179633,
+          "8.0": 0.41785270499726246,
+          "10.0": 0.417852704997264
+        },
+        "ise_theta_1e3": {
+          "2.0": 781.4255649598512,
+          "3.0": 781.9546801259685,
+          "4.0": 781.9634336331587,
+          "5.0": 781.9635784448827,
+          "6.0": 781.9635808405437,
+          "8.0": 781.9635808808313,
+          "10.0": 781.9635808808424
+        },
+        "max_abs_u_V": 9.145411392517154
+      }
+    },
+    "paper_comparison_table3": {
+      "PID": {
+        "paper_ise_psi_1e3": 0.271,
+        "paper_ise_theta_1e3": 526.6
+      },
+      "LQR": {
+        "paper_ise_psi_1e3": 0.393,
+        "paper_ise_theta_1e3": 810.0
+      },
+      "SMC": {
+        "paper_ise_psi_1e3": 0.247,
+        "paper_ise_theta_1e3": 660.9
+      },
+      "replicated_SMC": {
+        "ise_psi_1e3_10s": 0.23660365286334847,
+        "ise_theta_1e3_10s": 560.2766193028156,
+        "psi_ratio_replicated_over_paper": 0.9579095257625444,
+        "theta_ratio_replicated_over_paper": 0.8477479487105698
+      }
+    },
+    "references": {
+      "ideal_eq_column": {
+        "ise_psi_1e3_10s": 0.23407595411368065,
+        "ise_theta_1e3_10s": 552.3756196462389,
+        "max_abs_u_V": 16.290822785034305,
+        "Keq": [
+          2.19705607481821,
+          162.90822785034302,
+          2.735518157849968,
+          21.723730386560522
+        ]
+      },
+      "ideal_eq_sum": {
+        "ise_psi_1e3_10s": 0.4298678490706158,
+        "ise_theta_1e3_10s": 793.4082134330573,
+        "max_abs_u_V": 8.145411392517154,
+        "Keq": [
+          1.0985280374091053,
+          81.45411392517154,
+          1.3677590789249843,
+          10.861865193280263
+        ]
+      },
+      "b_sum_design_cte1_L4": {
+        "ise_psi_1e3_10s": 0.417852704997264,
+        "ise_theta_1e3_10s": 781.9635808808424,
+        "max_abs_u_V": 9.145411392517154,
+        "Keq": [
+          1.0985280374091053,
+          81.45411392517154,
+          1.3677590789249843,
+          10.861865193280263
+        ]
+      }
+    },
+    "design_note": "primary uses computed g=9.81 b=column by design choice; the argmin-by-max-reldev was printed_eq25_26/column (statistically tied, see investigation.adopted_variant)"
+  },
+  "adopted_design_rationale": "Adopted: computed matrices (g=9.81, the value that reproduces Eqs. 21-30; see results/model_verification.json), single-column input b = Bd[:,0]. This is the closest principled design to Eq. (62): entries 2-4 within 0.6-1.7%, entry 1 off by 14% for every candidate that realizes the published sliding poles; the published Eq. (62)-(63) pair itself confirms the single-column, Sb = 1 normalization. The b = sum variant realizes u_eq = -K_lqr exactly and is reported as a reference row.",
+  "deviations": [
+    "Eq. (62) entry 1 (theta coefficient): replicated -2.197 vs published -1.924 (14%); entries 2-4 within 0.6-1.7%. No principled variant (input-column, printed vs computed matrices, g=9.8/9.81) removes the entry-1 gap.",
+    "cte and L are not stated in the paper; selected (cte=1.0, L=4.0) from the contraction condition L > Sb_wiring*cte = 2*cte and a grid sweep. Values with L <= 2*cte chatter at the sampling rate.",
+    "Eq. (64) middle branch implemented as -cte*s/L (continuous in the layer); identical to the literal '-s/L' reading at the paper-neutral cte = 1 used here (verified to 0 in this run).",
+    "Motor-voltage saturation (Fig. 4) not applied: the paper states no limit; peak |u| ~ 17 V.",
+    "Table 4 (with disturbance) is out of scope for this script: the disturbance scenario is defined in Section 4.2 and handled by the integration step."
+  ],
+  "checks_failed": [],
+  "all_passed": true
+}

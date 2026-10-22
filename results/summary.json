@@ -1,0 +1,582 @@
+{
+ "paper": "Villacr\u00e9s et al. 2016, Section 4, Tables 3-4 (preliminary integration)",
+ "generated_by": "scripts/compare_ise.py",
+ "model_verification": {
+  "g": {
+   "table1_printed": 9.8,
+   "selected": 9.81,
+   "max_abs_dev_A1_vs_eq21": 0.0030902529809395674,
+   "max_abs_dev_B1_vs_eq22": 0.002340441133924287
+  },
+  "discrete": {
+   "T0": 0.01,
+   "max_abs_dev_Ad_vs_eq25": 0.00029210053744488373,
+   "max_abs_dev_Bd_vs_eq26": 2.7747436357852037e-05,
+   "open_loop_poles_computed": [
+    "1.0703+0.0000j",
+    "1.0000+0.0000j",
+    "0.9362+0.0000j",
+    "0.0091+0.0000j"
+   ],
+   "poles_published_eq27_30": [
+    1.0,
+    0.0091,
+    1.0703,
+    0.9362
+   ],
+   "max_abs_dev_poles": 4.885313795977009e-05,
+   "bd_columns_identical": true
+  },
+  "all_passed": true
+ },
+ "controller_verification": {
+  "PID": {
+   "gains_table2": {
+    "psi": {
+     "KP": -77.97,
+     "KI": -0.01,
+     "KD": -8.79
+    },
+    "theta": {
+     "KP": -1.07,
+     "KI": -0.01,
+     "KD": -1.36
+    },
+    "source": "paper Table 2, used exactly as printed (negative)"
+   },
+   "eq34_coeffs": {
+    "psi": [
+     -956.9700499999999,
+     1835.9699499999997,
+     -878.9999999999999
+    ],
+    "theta": [
+     -137.07005,
+     273.06995,
+     -136.0
+    ]
+   },
+   "wiring": "u_left = u_right = u_psi + u_theta; each loop on E = -x_i with x_ref = 0 (Eq. 35).  The paper never states the wiring; E=-x is forced by stability (sign flip diverges), summed-vs-split is unidentifiable with identical Bd columns.",
+   "u_sat_identified_V": 12.0,
+   "u_sat_identification": "Fig. 4 shows a saturation block but no value.  Scan over symmetric limits; 12 V reproduces both Table 3 PID entries to ~10 % (psi wants >=15 V, theta ~10 V; 12 V is the compromise and the standard supply).",
+   "deviations_vs_table3_10s_primary": "psi x1.09, theta x0.96 (ours/paper)"
+  },
+  "LQR": {
+   "K_computed": [
+    -1.099055119819472,
+    -81.4420789942307,
+    -1.36753374389969,
+    -10.860029355917245
+   ],
+   "K_published_eq45": [
+    -1.099,
+    -81.44,
+    -1.368,
+    -10.86
+   ],
+   "max_abs_dev_K_vs_eq45": 0.0020789942307004594,
+   "iterations_eq42": 436,
+   "gamma_eq42": 1e-09,
+   "Q_eq43_diag": [
+    [
+     0.38,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.43,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.09,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.09
+    ]
+   ],
+   "R_eq44_printed": 0.00017,
+   "R_effective_scalar": 0.00034,
+   "closed_loop_poles": [
+    "0.0000+0.0000j",
+    "0.9318+0.0042j",
+    "0.9318-0.0042j",
+    "0.9797+0.0000j"
+   ],
+   "pole_note": "Eqs. (60)-(61) plus an unstated deadbeat pole at 0"
+  },
+  "SMC": {
+   "S_computed": [
+    -2.197056074818521,
+    -150.49025428479055,
+    -1.684689552937985,
+    -21.181597601491763
+   ],
+   "S_published_eq62": [
+    -1.924,
+    -147.918,
+    -1.669,
+    -21.065
+   ],
+   "reldev_S_vs_eq62_per_entry": [
+    0.14192103680796317,
+    0.01738973137001951,
+    0.009400570963442191,
+    0.005535134179528212
+   ],
+   "max_reldev_S_vs_eq62": 0.14192103680796317,
+   "Keq_computed_eq57": [
+    2.19705607481821,
+    162.90822785034302,
+    2.735518157849968,
+    21.723730386560522
+   ],
+   "Keq_published_eq63": [
+    1.924,
+    160.27,
+    2.717,
+    21.581
+   ],
+   "max_reldev_Keq_vs_eq63": 0.1419210368078016,
+   "design_input": "b = Bd[:,0] (single column); the published Eq.(62)-(63) pair is consistent only with Sb = 1",
+   "b_wiring": "Bd @ [1,1] (scalar u to both motors)",
+   "Sb_wiring": 2.0000000000002824,
+   "cte_L_eq64": [
+    1.0,
+    4.0
+   ],
+   "contraction_factor": 0.5000000000000706,
+   "sliding_poles_eq60_61": [
+    "0.9318+0.0042j",
+    "0.9318-0.0042j",
+    "0.9797"
+   ],
+   "on_manifold_pole_dev": 2.7335771513017825e-12,
+   "u_eq_equals_minus_K_lqr_for_b_sum_design": "ideal SMC with the b-sum surface reproduces u = -K_lqr exactly (run_smc.py lqr_identity); the adopted column surface has twice the gain, matching Eq. (63)"
+  }
+ },
+ "design_cross_checks_vs_runner_jsons": {
+  "K_vs_lqr_json_max_abs_dev": 0.0,
+  "S_vs_smc_json_max_abs_dev": 0.0,
+  "Sb_design": 1.0000000000001414,
+  "Sb_wiring": 2.0000000000002824,
+  "contraction_factor": 0.5000000000000706,
+  "on_manifold_pole_dev_vs_eq60_61": 2.7335771513017825e-12
+ },
+ "scenarios": {
+  "x0": [
+   0.0,
+   0.1,
+   0.0,
+   0.0
+  ],
+  "n_steps": 1000,
+  "primary_window_s": 10.0,
+  "window_sweep_s": [
+   2.0,
+   3.0,
+   4.0,
+   5.0,
+   6.0,
+   8.0,
+   10.0
+  ],
+  "no_disturbance": "start-up from psi(0) = 0.1 rad (Table 3)",
+  "disturbance": "Section 4.2 emulation: ONE-SAMPLE additive pulse +0.05 rad on psi at step 500 (t = 5.0 s); magnitude/shape/timing unstated in the paper",
+  "recovery_band_rad": 0.001,
+  "controller_configs": {
+   "PID": "Table 2 gains, summed loops, u_sat = 12.0 V (identified)",
+   "LQR": "Eq. (45) gain, unsaturated",
+   "SMC": "Eq. (62) surface from Bd[:,0], Eq. (64) layer cte = 1.0, L = 4.0, unsaturated"
+  }
+ },
+ "ise_tables": {
+  "no_disturbance_10s_vs_table3": {
+   "PID": {
+    "psi_x1e3": 0.29541089040067564,
+    "theta_x1e3": 503.3919562336887,
+    "paper_psi_x1e3": 0.271,
+    "paper_theta_x1e3": 526.6,
+    "ratio_psi": 1.09,
+    "ratio_theta": 0.96
+   },
+   "LQR": {
+    "psi_x1e3": 0.4300083456500731,
+    "theta_x1e3": 793.119251616799,
+    "paper_psi_x1e3": 0.393,
+    "paper_theta_x1e3": 810.0,
+    "ratio_psi": 1.09,
+    "ratio_theta": 0.98
+   },
+   "SMC": {
+    "psi_x1e3": 0.23660365286334847,
+    "theta_x1e3": 560.2766193028156,
+    "paper_psi_x1e3": 0.247,
+    "paper_theta_x1e3": 660.9,
+    "ratio_psi": 0.96,
+    "ratio_theta": 0.85
+   }
+  },
+  "no_disturbance_5s_vs_table3": {
+   "PID": {
+    "psi_x1e3": 0.29541088991446246,
+    "theta_x1e3": 503.1434779311025,
+    "paper_psi_x1e3": 0.271,
+    "paper_theta_x1e3": 526.6,
+    "ratio_psi": 1.09,
+    "ratio_theta": 0.96
+   },
+   "LQR": {
+    "psi_x1e3": 0.43000834532052307,
+    "theta_x1e3": 793.119249203707,
+    "paper_psi_x1e3": 0.393,
+    "paper_theta_x1e3": 810.0,
+    "ratio_psi": 1.09,
+    "ratio_theta": 0.98
+   },
+   "SMC": {
+    "psi_x1e3": 0.23660362618579828,
+    "theta_x1e3": 560.2753522410621,
+    "paper_psi_x1e3": 0.247,
+    "paper_theta_x1e3": 660.9,
+    "ratio_psi": 0.96,
+    "ratio_theta": 0.85
+   }
+  },
+  "disturbance_10s_vs_table4": {
+   "PID": {
+    "psi_x1e3": 0.3448363724556896,
+    "theta_x1e3": 595.3946596843767,
+    "paper_psi_x1e3": 0.666,
+    "paper_theta_x1e3": 653.2,
+    "ratio_psi": 0.52,
+    "ratio_theta": 0.91
+   },
+   "LQR": {
+    "psi_x1e3": 0.5375110773532575,
+    "theta_x1e3": 991.436999761338,
+    "paper_psi_x1e3": 0.622,
+    "paper_theta_x1e3": 947.9,
+    "ratio_psi": 0.86,
+    "ratio_theta": 1.05
+   },
+   "SMC": {
+    "psi_x1e3": 0.29604038477882594,
+    "theta_x1e3": 702.8889894039816,
+    "paper_psi_x1e3": 0.572,
+    "paper_theta_x1e3": 768.2,
+    "ratio_psi": 0.52,
+    "ratio_theta": 0.91
+   }
+  },
+  "disturbance_post_kick_5_to_10s": {
+   "PID": {
+    "psi_x1e3": 0.04942548254122711,
+    "theta_x1e3": 92.25118175327431
+   },
+   "LQR": {
+    "psi_x1e3": 0.10750273203273443,
+    "theta_x1e3": 198.31775055763094
+   },
+   "SMC": {
+    "psi_x1e3": 0.05943675859302771,
+    "theta_x1e3": 142.6136371629195
+   }
+  },
+  "pid_unsaturated_reference_10s_nodist": {
+   "psi_x1e3": 1.6893163226895112,
+   "theta_x1e3": 267.7329855528955,
+   "ratio_psi": 6.23,
+   "ratio_theta": 0.51
+  },
+  "window_sweep_nodist_x1e3": {
+   "PID": {
+    "2s": {
+     "psi_x1e3": 0.2953641002669857,
+     "theta_x1e3": 502.8367057020655
+    },
+    "3s": {
+     "psi_x1e3": 0.29540985281248805,
+     "theta_x1e3": 503.07368021066026
+    },
+    "4s": {
+     "psi_x1e3": 0.2954108678836033,
+     "theta_x1e3": 503.0964692020448
+    },
+    "5s": {
+     "psi_x1e3": 0.29541088991446246,
+     "theta_x1e3": 503.1434779311025
+    },
+    "6s": {
+     "psi_x1e3": 0.29541089039041313,
+     "theta_x1e3": 503.19440502872715
+    },
+    "8s": {
+     "psi_x1e3": 0.2954108904006728,
+     "theta_x1e3": 503.294970495446
+    },
+    "10s": {
+     "psi_x1e3": 0.29541089040067564,
+     "theta_x1e3": 503.3919562336887
+    }
+   },
+   "LQR": {
+    "2s": {
+     "psi_x1e3": 0.42993440699514507,
+     "theta_x1e3": 792.5763739500106
+    },
+    "3s": {
+     "psi_x1e3": 0.4300071266490983,
+     "theta_x1e3": 793.1103254235917
+    },
+    "4s": {
+     "psi_x1e3": 0.4300083256068498,
+     "theta_x1e3": 793.1191048526109
+    },
+    "5s": {
+     "psi_x1e3": 0.43000834532052307,
+     "theta_x1e3": 793.119249203707
+    },
+    "6s": {
+     "psi_x1e3": 0.4300083456446546,
+     "theta_x1e3": 793.1192515771229
+    },
+    "8s": {
+     "psi_x1e3": 0.43000834565007157,
+     "theta_x1e3": 793.1192516167883
+    },
+    "10s": {
+     "psi_x1e3": 0.4300083456500731,
+     "theta_x1e3": 793.119251616799
+    }
+   },
+   "SMC": {
+    "2s": {
+     "psi_x1e3": 0.23652981653154795,
+     "theta_x1e3": 556.7689478953041
+    },
+    "3s": {
+     "psi_x1e3": 0.23659839317333073,
+     "theta_x1e3": 560.0268077821148
+    },
+    "4s": {
+     "psi_x1e3": 0.2366032782755486,
+     "theta_x1e3": 560.2588280935948
+    },
+    "5s": {
+     "psi_x1e3": 0.23660362618579828,
+     "theta_x1e3": 560.2753522410621
+    },
+    "6s": {
+     "psi_x1e3": 0.23660365096345778,
+     "theta_x1e3": 560.2765290666862
+    },
+    "8s": {
+     "psi_x1e3": 0.23660365285376078,
+     "theta_x1e3": 560.2766188474404
+    },
+    "10s": {
+     "psi_x1e3": 0.23660365286334847,
+     "theta_x1e3": 560.2766193028156
+    }
+   }
+  },
+  "table4_minus_table3_increments": {
+   "note": "the paper's own disturbance footprint vs the footprint of our documented +0.05 rad one-sample kick; ours are 2-8x smaller in psi, so absolute Table 4 levels are NOT expected to match -- only the rankings are meaningful",
+   "PID": {
+    "paper_psi_x1e3": 0.395,
+    "ours_psi_x1e3": 0.04942548205501396,
+    "paper_theta_x1e3": 126.60000000000002,
+    "ours_theta_x1e3": 92.00270345068805
+   },
+   "LQR": {
+    "paper_psi_x1e3": 0.22899999999999998,
+    "ours_psi_x1e3": 0.10750273170318442,
+    "paper_theta_x1e3": 137.89999999999998,
+    "ours_theta_x1e3": 198.317748144539
+   },
+   "SMC": {
+    "paper_psi_x1e3": 0.32499999999999996,
+    "ours_psi_x1e3": 0.059436731915477464,
+    "paper_theta_x1e3": 107.30000000000007,
+    "ours_theta_x1e3": 142.612370101166
+   }
+  }
+ },
+ "startup_energy_first_1s": {
+  "PID": {
+   "window_s": 1.0,
+   "per_motor_V2s": 5.2388285688831635,
+   "both_motors_V2s": 10.477657137766327
+  },
+  "LQR": {
+   "window_s": 1.0,
+   "per_motor_V2s": 3.70499345764593,
+   "both_motors_V2s": 7.40998691529186
+  },
+  "SMC": {
+   "window_s": 1.0,
+   "per_motor_V2s": 5.702660334002888,
+   "both_motors_V2s": 11.405320668005777
+  },
+  "PID_unsaturated_reference": {
+   "window_s": 1.0,
+   "per_motor_V2s": 114.45035714892654,
+   "both_motors_V2s": 228.90071429785309
+  }
+ },
+ "recovery_metrics_disturbance": {
+  "PID": {
+   "psi_kick_sample_rad": 0.05000135348146627,
+   "psi_overshoot_after_kick_rad": 0.02925904806208717,
+   "psi_recovery_s_to_2pct_of_kick": 0.92,
+   "theta_max_post_kick_rad": 0.4914573300562045,
+   "u_peak_post_kick_V": 12.0
+  },
+  "LQR": {
+   "psi_kick_sample_rad": 0.050001151666554444,
+   "psi_overshoot_after_kick_rad": 0.04308926705297658,
+   "psi_recovery_s_to_2pct_of_kick": 1.36,
+   "theta_max_post_kick_rad": 0.617974733539526,
+   "u_peak_post_kick_V": 4.072003580570258
+  },
+  "SMC": {
+   "psi_kick_sample_rad": 0.05000834022468306,
+   "psi_overshoot_after_kick_rad": 0.034246385515388014,
+   "psi_recovery_s_to_2pct_of_kick": 0.42,
+   "theta_max_post_kick_rad": 0.5138825576357712,
+   "u_peak_post_kick_V": 9.143956355858677
+  }
+ },
+ "chatter_smc": {
+  "nodist": {
+   "max_abs_delta_u_after_reach_V": 0.0061191641336338365,
+   "delta_u_sign_alternations_after_reach": 0
+  },
+  "dist_kick_masked": {
+   "max_abs_delta_u_after_reach_V": 0.678663979156584,
+   "delta_u_sign_alternations_after_reach": 0
+  },
+  "dist_raw": {
+   "max_abs_delta_u_after_reach_V": 9.145182841397123,
+   "delta_u_sign_alternations_after_reach": 1
+  }
+ },
+ "qualitative_claims": {
+  "i_smc_lowest_psi_ise_both_scenarios": {
+   "claim": "SMC has the lowest psi-ISE in both scenarios (Tables 3-4)",
+   "values": {
+    "nodist_10s": {
+     "PID": 0.29541089040067564,
+     "LQR": 0.4300083456500731,
+     "SMC": 0.23660365286334847
+    },
+    "dist_10s": {
+     "PID": 0.3448363724556896,
+     "LQR": 0.5375110773532575,
+     "SMC": 0.29604038477882594
+    }
+   },
+   "pass": true
+  },
+  "ii_pid_lowest_theta_ise": {
+   "claim": "PID has the lowest theta-ISE",
+   "values": {
+    "nodist_10s": {
+     "PID": 503.3919562336887,
+     "LQR": 793.119251616799,
+     "SMC": 560.2766193028156
+    },
+    "dist_10s": {
+     "PID": 595.3946596843767,
+     "LQR": 991.436999761338,
+     "SMC": 702.8889894039816
+    }
+   },
+   "pass": true
+  },
+  "iii_lqr_lowest_startup_energy": {
+   "claim": "LQR uses the least start-up control energy (Fig. 9); metric E = T0*sum(u_l^2+u_r^2) over the first 1 s",
+   "values_V2s_both_motors": {
+    "PID": 10.477657137766327,
+    "LQR": 7.40998691529186,
+    "SMC": 11.405320668005777
+   },
+   "values_V2s_per_motor": {
+    "PID": 5.2388285688831635,
+    "LQR": 3.70499345764593,
+    "SMC": 5.702660334002888
+   },
+   "pid_unsaturated_reference_V2s_both_motors": 228.90071429785309,
+   "lowest": "LQR",
+   "pass": true
+  },
+  "iv_smc_recovers_faster_than_lqr_smaller_overshoot_than_pid": {
+   "claim": "under the disturbance SMC recovers faster than LQR and overshoots less than PID (psi; overshoot measured after the kick sample, recovery vs the 2%-of-kick band)",
+   "recovery_smc_vs_lqr": true,
+   "overshoot_smc_vs_pid": false,
+   "values": {
+    "PID": {
+     "psi_kick_sample_rad": 0.05000135348146627,
+     "psi_overshoot_after_kick_rad": 0.02925904806208717,
+     "psi_recovery_s_to_2pct_of_kick": 0.92,
+     "theta_max_post_kick_rad": 0.4914573300562045,
+     "u_peak_post_kick_V": 12.0
+    },
+    "LQR": {
+     "psi_kick_sample_rad": 0.050001151666554444,
+     "psi_overshoot_after_kick_rad": 0.04308926705297658,
+     "psi_recovery_s_to_2pct_of_kick": 1.36,
+     "theta_max_post_kick_rad": 0.617974733539526,
+     "u_peak_post_kick_V": 4.072003580570258
+    },
+    "SMC": {
+     "psi_kick_sample_rad": 0.05000834022468306,
+     "psi_overshoot_after_kick_rad": 0.034246385515388014,
+     "psi_recovery_s_to_2pct_of_kick": 0.42,
+     "theta_max_post_kick_rad": 0.5138825576357712,
+     "u_peak_post_kick_V": 9.143956355858677
+    }
+   },
+   "pass": false
+  },
+  "v_no_chattering_in_smc": {
+   "claim": "no chattering in the SMC responses (Figs. 5-12)",
+   "values": {
+    "nodist": {
+     "max_abs_delta_u_after_reach_V": 0.0061191641336338365,
+     "delta_u_sign_alternations_after_reach": 0
+    },
+    "dist_kick_masked": {
+     "max_abs_delta_u_after_reach_V": 0.678663979156584,
+     "delta_u_sign_alternations_after_reach": 0
+    },
+    "dist_raw": {
+     "max_abs_delta_u_after_reach_V": 9.145182841397123,
+     "delta_u_sign_alternations_after_reach": 1
+    }
+   },
+   "pass": true
+  }
+ },
+ "assumptions_and_deviations": [
+  "g = 9.81 used (Table 1 prints 9.8); see model_verification.g.",
+  "Simulation window 10 s (1000 steps) for the primary tables; the paper does not state its ISE integration window. A 5 s no-disturbance table and a 2-10 s sweep are included; the ISE is essentially converged by 3-4 s in every controller.",
+  "Disturbance emulation: the Section 4.2 force has no stated magnitude, shape or timing; implemented as a one-sample additive pulse of +0.05 rad on psi at t = 5.0 s (step 500).",
+  "PID carries the Fig. 4 saturation block at +/-12 V IDENTIFIED in run_pid.py (the paper states no value); without it the literal Table 2 PID misses psi-ISE by x6.2 vs Table 3. LQR and SMC run unsaturated (peak |u| ~ 8.1 V and ~17.3 V); an unsaturated PID reference row is reported for fairness.",
+  "Start-up energy metric fixed across controllers as T0*sum(u_l^2+u_r^2) [V^2 s], reported both-motors and per-motor. CROSS-CHECK FINDING: results/pid.json fig9_claim_record is doubly mis-scaled -- run_pid.py stores 'u' = U[:,0], a PER-MOTOR column, so its control_effort_V2s (5.258 V^2 s at 10 s) is per-motor, yet fig9 labels it 'both motors' and halves it; AND the LQR number it cites from lqr.json (374.04) is a RAW sample sum without the T0 factor (3.74 V^2 s per motor T0-weighted). With the consistent metric here, LQR has the LOWEST start-up energy (7.41 vs PID 10.48 and SMC 11.41 V^2 s, both motors) and the paper's Fig. 9 claim REPLICATES -- the opposite of pid.json's recorded conclusion.",
+  "SMC (cte, L) = (1.0, 4.0) are not stated in the paper; chosen in run_smc.py from the contraction condition L > Sb_wiring*cte = 2*cte.",
+  "u_left = u_right = u for every controller (verified identical Bd columns); the paper never states the motor wiring.",
+  "The Eq. (62) entry-1 deviation (ours -2.197 vs published -1.924, 14%) persists in every principled SMC variant (run_smc.py); entries 2-4 match to 0.6-1.7%.",
+  "Disturbed-scenario ranking nuance: our psi ordering is SMC < PID < LQR while the paper's Table 4 has SMC < LQR < PID; the dominant effect is the unstated disturbance (see table4_minus_table3_increments), under which our +0.05 rad kick adds far less psi-ISE than the paper's force appears to.",
+  "Ratios are ours/paper, 2 decimals; comparisons are PRELIMINARY -- the point is the ranking, not exact ISE matching."
+ ]
+}
