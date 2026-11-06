@@ -1,0 +1,514 @@
+{
+ "generated_by": "scripts/make_checkpoint_figures.py",
+ "protocol": {
+  "kick": "one-sample additive pulse on psi at t = 5 s (step 500)",
+  "primary_saturation": "PID +/-12 V (identified, run_pid.py); LQR and SMC unsaturated - the Section-1 configurations",
+  "variant_saturation": "+/-9 V for every controller (the Fig. 4 block at the NXT supply rail)",
+  "x0": [
+   0.0,
+   0.1,
+   0.0,
+   0.0
+  ],
+  "n_steps": 1000,
+  "fit_grid_rad": [
+   0.02,
+   0.05,
+   0.1,
+   0.15,
+   0.2
+  ],
+  "margin_grid_rad": [
+   0.02,
+   0.05,
+   0.1,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.35,
+   0.4
+  ],
+  "recovery_band": "2% of the kick, within the post-kick window",
+  "note": "checkpoint Sec. 5 protocol. The regression-to-print hypotheses below are supported as CONSISTENCIES, not established as the original authors' simulation choices; the original Simulink model is unavailable."
+ },
+ "paper_increment_targets_x1e3": {
+  "PID": 0.395,
+  "LQR": 0.229,
+  "SMC": 0.325
+ },
+ "fitted_exponents": {
+  "PID": {
+   "exponent": 2.04,
+   "amplitude_x1e3": 39.3716
+  },
+  "LQR": {
+   "exponent": 2.0,
+   "amplitude_x1e3": 43.0004
+  },
+  "SMC": {
+   "exponent": 2.0,
+   "amplitude_x1e3": 23.4607
+  }
+ },
+ "recovery_loss_margins": {
+  "PID": {
+   "loses_recovery_beyond_rad": 0.4,
+   "recovered_at_sweep_ceiling": false
+  },
+  "LQR": {
+   "loses_recovery_beyond_rad": null,
+   "recovered_at_sweep_ceiling": true
+  },
+  "SMC": {
+   "loses_recovery_beyond_rad": null,
+   "recovered_at_sweep_ceiling": true
+  }
+ },
+ "fitted_exponents_9v_variant": {
+  "PID": {
+   "exponent": 2.44,
+   "amplitude_x1e3": 116.3234
+  },
+  "LQR": {
+   "exponent": 2.17,
+   "amplitude_x1e3": 76.5614
+  },
+  "SMC": {
+   "exponent": 2.46,
+   "amplitude_x1e3": 119.4033
+  }
+ },
+ "recovery_loss_margins_9v_variant": {
+  "PID": {
+   "loses_recovery_beyond_rad": 0.3,
+   "recovered_at_sweep_ceiling": false
+  },
+  "LQR": {
+   "loses_recovery_beyond_rad": 0.3,
+   "recovered_at_sweep_ceiling": false
+  },
+  "SMC": {
+   "loses_recovery_beyond_rad": 0.3,
+   "recovered_at_sweep_ceiling": false
+  }
+ },
+ "state_kick_amplitude_matching_paper_PID_footprint_rad": 0.1047,
+ "magnitude_sweep": {
+  "0.02": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 0.020088188489844828,
+    "recovery_s_to_2pct_of_kick": 0.74,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.018285378401518164
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 0.017200591962871548,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.017236383773032195
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 0.00946108856117316,
+    "recovery_s_to_2pct_of_kick": 0.42,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.0130884689060757
+   }
+  },
+  "0.05": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 0.04942548205501393,
+    "recovery_s_to_2pct_of_kick": 0.92,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.02925904806208717
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 0.10750273170318435,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.04308926705297658
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 0.059436731915477506,
+    "recovery_s_to_2pct_of_kick": 0.42,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.034246385515388014
+   }
+  },
+  "0.1": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 0.2954092825380856,
+    "recovery_s_to_2pct_of_kick": 1.07,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.07945099308110089
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 0.4300096360597209,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.0861774058528839
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 0.23660473319687003,
+    "recovery_s_to_2pct_of_kick": 0.42,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.07022861859631564
+   }
+  },
+  "0.15": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 0.8620973913105882,
+    "recovery_s_to_2pct_of_kick": 1.1500000000000001,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.12964293810011462
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 0.9675207130696076,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.12926554465279122
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 0.5300824505847896,
+    "recovery_s_to_2pct_of_kick": 0.42,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.10621085167724328
+   }
+  },
+  "0.2": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 2.0426317415172623,
+    "recovery_s_to_2pct_of_kick": 1.27,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.17983488311912832
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 1.720035962732849,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.17235368345269855
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 0.9409497122349338,
+    "recovery_s_to_2pct_of_kick": 0.42,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.14219308475817094
+   }
+  },
+  "0.25": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 4.215907951122259,
+    "recovery_s_to_2pct_of_kick": 1.41,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.23002682813814207
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 2.687555385049438,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.21544182225260586
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 1.4695926071146397,
+    "recovery_s_to_2pct_of_kick": 0.41000000000000003,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.1781753178390985
+   }
+  },
+  "0.3": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 8.101712271876956,
+    "recovery_s_to_2pct_of_kick": 1.6,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.28021877315715576
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 3.870078980019377,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.25852996105251314
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 2.115950983667934,
+    "recovery_s_to_2pct_of_kick": 0.41000000000000003,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.2141575509200261
+   }
+  },
+  "0.35": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 15.731877521956235,
+    "recovery_s_to_2pct_of_kick": 1.92,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.3304107181761695
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 5.267606747642669,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.30161809985242044
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 2.8804559276240402,
+    "recovery_s_to_2pct_of_kick": 0.41000000000000003,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.2501397840009537
+   }
+  },
+  "0.4": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 1.2798044129332135e+27,
+    "recovery_s_to_2pct_of_kick": 5.0,
+    "recovered": false,
+    "psi_overshoot_after_kick_rad": 4031246553812.476
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 6.880138687919324,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.34470623865232775
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 3.7627495014562906,
+    "recovery_s_to_2pct_of_kick": 0.41000000000000003,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.28612201708188145
+   }
+  }
+ },
+ "magnitude_sweep_9v_variant": {
+  "0.02": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 0.010655336100197258,
+    "recovery_s_to_2pct_of_kick": 0.76,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.011427293313129788
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 0.017200591962871548,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.017236383773032195
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 0.009461058629591177,
+    "recovery_s_to_2pct_of_kick": 0.42,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.013089231543757907
+   }
+  },
+  "0.05": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 0.05852600001883486,
+    "recovery_s_to_2pct_of_kick": 0.99,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.03449264592466757
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 0.10750273170318435,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.04308926705297658
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 0.05992130150607129,
+    "recovery_s_to_2pct_of_kick": 0.43,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.034498085106070456
+   }
+  },
+  "0.1": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 0.3473784241172407,
+    "recovery_s_to_2pct_of_kick": 1.11,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.0846845909436813
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 0.4300096360597209,
+    "recovery_s_to_2pct_of_kick": 1.36,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.0861774058528839
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 0.3315079707551393,
+    "recovery_s_to_2pct_of_kick": 0.45,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.08469003012508419
+   }
+  },
+  "0.15": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 1.148976644201772,
+    "recovery_s_to_2pct_of_kick": 1.27,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.134876535962695
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 1.1436970464225582,
+    "recovery_s_to_2pct_of_kick": 1.3900000000000001,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.1348762420700702
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 1.1079966894216724,
+    "recovery_s_to_2pct_of_kick": 0.96,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.1348819751440979
+   }
+  },
+  "0.2": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 2.9624076240018633,
+    "recovery_s_to_2pct_of_kick": 1.47,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.18506848098170872
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 2.8885986508691577,
+    "recovery_s_to_2pct_of_kick": 1.52,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.18506818708908393
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 2.8797436136358634,
+    "recovery_s_to_2pct_of_kick": 1.24,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.18507392016311164
+   }
+  },
+  "0.25": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 7.0203429304320615,
+    "recovery_s_to_2pct_of_kick": 1.79,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.23526042600072244
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 6.9404566774808005,
+    "recovery_s_to_2pct_of_kick": 1.78,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.23526013210809765
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 6.798182224914755,
+    "recovery_s_to_2pct_of_kick": 1.6300000000000001,
+    "recovered": true,
+    "psi_overshoot_after_kick_rad": 0.2352658651821254
+   }
+  },
+  "0.3": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 7.198015762093487e+26,
+    "recovery_s_to_2pct_of_kick": 5.0,
+    "recovered": false,
+    "psi_overshoot_after_kick_rad": 3023249263246.788
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 7.19777018445107e+26,
+    "recovery_s_to_2pct_of_kick": 5.0,
+    "recovered": false,
+    "psi_overshoot_after_kick_rad": 3023197690092.206
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 7.156237949849798e+26,
+    "recovery_s_to_2pct_of_kick": 5.0,
+    "recovered": false,
+    "psi_overshoot_after_kick_rad": 3014462915136.503
+   }
+  },
+  "0.35": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 2.058493668688331e+28,
+    "recovery_s_to_2pct_of_kick": 5.0,
+    "recovered": false,
+    "psi_overshoot_after_kick_rad": 16167479793666.29
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 2.058480535801312e+28,
+    "recovery_s_to_2pct_of_kick": 5.0,
+    "recovered": false,
+    "psi_overshoot_after_kick_rad": 16167428220511.748
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 2.0562568664754288e+28,
+    "recovery_s_to_2pct_of_kick": 5.0,
+    "recovered": false,
+    "psi_overshoot_after_kick_rad": 16158693445555.984
+   }
+  },
+  "0.4": {
+   "PID": {
+    "psi_ise_post_kick_increment_x1e3": 6.766236942713293e+28,
+    "recovery_s_to_2pct_of_kick": 5.0,
+    "recovered": false,
+    "psi_overshoot_after_kick_rad": 29311710324085.855
+   },
+   "LQR": {
+    "psi_ise_post_kick_increment_x1e3": 6.766213132715664e+28,
+    "recovery_s_to_2pct_of_kick": 5.0,
+    "recovered": false,
+    "psi_overshoot_after_kick_rad": 29311658750931.293
+   },
+   "SMC": {
+    "psi_ise_post_kick_increment_x1e3": 6.762181116409936e+28,
+    "recovery_s_to_2pct_of_kick": 5.0,
+    "recovered": false,
+    "psi_overshoot_after_kick_rad": 29302923975975.57
+   }
+  }
+ },
+ "shape_sweep": {
+  "state_kick_0.05rad": {
+   "PID": {
+    "psi_increment_x1e3": 0.0494,
+    "vs_paper_increment": 125.128,
+    "psi_overshoot_after_kick_rad": 0.02926
+   },
+   "LQR": {
+    "psi_increment_x1e3": 0.1075,
+    "vs_paper_increment": 469.444,
+    "psi_overshoot_after_kick_rad": 0.04309
+   },
+   "SMC": {
+    "psi_increment_x1e3": 0.0594,
+    "vs_paper_increment": 182.882,
+    "psi_overshoot_after_kick_rad": 0.03425
+   }
+  },
+  "input_kick_1V_1sample": {
+   "PID": {
+    "psi_increment_x1e3": 0.0003,
+    "vs_paper_increment": 0.875,
+    "psi_overshoot_after_kick_rad": 0.00261
+   },
+   "LQR": {
+    "psi_increment_x1e3": 0.0002,
+    "vs_paper_increment": 0.788,
+    "psi_overshoot_after_kick_rad": 0.00192
+   },
+   "SMC": {
+    "psi_increment_x1e3": 0.0001,
+    "vs_paper_increment": 0.166,
+    "psi_overshoot_after_kick_rad": 0.00084
+   }
+  },
+  "input_pulse_1V_0.1s": {
+   "PID": {
+    "psi_increment_x1e3": 0.0197,
+    "vs_paper_increment": 49.959,
+    "psi_overshoot_after_kick_rad": 0.01341
+   },
+   "LQR": {
+    "psi_increment_x1e3": 0.0117,
+    "vs_paper_increment": 51.005,
+    "psi_overshoot_after_kick_rad": 0.01025
+   },
+   "SMC": {
+    "psi_increment_x1e3": 0.0022,
+    "vs_paper_increment": 6.636,
+    "psi_overshoot_after_kick_rad": 0.00433
+   }
+  }
+ }
+}
