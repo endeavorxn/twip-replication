@@ -1,0 +1,72 @@
+{
+  "realisation": {
+    "eq63_construction_minus_2K": {
+      "psi": 0.2365,
+      "theta": 560.18
+    },
+    "design_identity_minus_K": {
+      "psi": 0.4197,
+      "theta": 783.55
+    },
+    "note": "-K realisation: SMC psi-ISE 0.42 > PID 0.295 -> the paper's SMC-lowest psi ranking would NOT reproduce; the simulated Eq.-(63) realisation is therefore load-bearing and is the configuration used everywhere in this report"
+  },
+  "surface": {
+    "adopted_S": {
+      "psi": 0.2365,
+      "theta": 560.18
+    },
+    "printed_S_eq62": {
+      "psi": 0.2335,
+      "theta": 624.32
+    },
+    "printed_eq63_vector": {
+      "psi": 0.2349,
+      "theta": 611.49
+    }
+  },
+  "boundary_layer_grid": {
+    "cte=0.5_L=2.0": {
+      "psi": 0.2373,
+      "theta": 545.47
+    },
+    "cte=0.5_L=4.0": {
+      "psi": 0.2352,
+      "theta": 550.19
+    },
+    "cte=0.5_L=8.0": {
+      "psi": 0.2349,
+      "theta": 555.46
+    },
+    "cte=0.5_L=16.0": {
+      "psi": 0.2348,
+      "theta": 556.52
+    },
+    "cte=1.0_L=4.0": {
+      "psi": 0.2365,
+      "theta": 560.18
+    },
+    "cte=1.0_L=8.0": {
+      "psi": 0.2359,
+      "theta": 560.52
+    },
+    "cte=1.0_L=16.0": {
+      "psi": 0.2344,
+      "theta": 557.21
+    },
+    "cte=2.0_L=8.0": {
+      "psi": 0.2344,
+      "theta": 560.74
+    },
+    "cte=2.0_L=16.0": {
+      "psi": 0.2349,
+      "theta": 557.84
+    }
+  },
+  "boundary_layer_range": {
+    "psi_min": 0.2344,
+    "psi_max": 0.2373,
+    "theta_min": 545.47,
+    "theta_max": 560.74,
+    "rankings_intact": true
+  }
+}
