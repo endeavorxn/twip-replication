@@ -189,10 +189,16 @@ def startup_energy(us, n=100):
 
 def recovery_time(xs, kick_amp=0.05):
     """Time after the kick until psi stays inside the +/-2%-of-kick band
-    (last exit from the band), per the team metric (B.2)."""
+    (last exit from the band), per the team metric (B.2). Returns None if
+    psi is still outside the band at the end of the window (no recovery)."""
     band = 0.02 * kick_amp
     outside = np.where(np.abs(xs[KICK_IDX:, 1]) > band)[0]
-    return (outside[-1] + 1) * T0 if len(outside) else 0.0
+    last = xs.shape[0] - 1 - KICK_IDX
+    if not len(outside):
+        return 0.0
+    if outside[-1] == last:
+        return None
+    return (outside[-1] + 1) * T0
 
 
 def overshoot(xs):
