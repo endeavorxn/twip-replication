@@ -69,7 +69,7 @@ INPUT_PULSE_S = 0.1                # sustained input pulse width
 
 # paper Fig. 10 axis ranges (angle [rad], angular speed [rad/s])
 PHASE_X = (0.0, 0.105)
-PHASE_Y = (-2.6, 0.6)
+PHASE_Y = (-4.10, 0.55)
 
 
 # --------------------------------------------------------------------------- #
