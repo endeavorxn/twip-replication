@@ -68,7 +68,7 @@ INPUT_KICK_V = 1.0                 # one-sample input (torque-level) kick
 INPUT_PULSE_S = 0.1                # sustained input pulse width
 
 # paper Fig. 10 axis ranges (angle [rad], angular speed [rad/s])
-PHASE_X = (0.0, 0.105)
+PHASE_X = (-0.045, 0.105)
 PHASE_Y = (-4.10, 0.55)
 
 
@@ -151,6 +151,38 @@ def label_line(ax, x, y, text, dx=6, dy=0):
                 color=INK2, fontsize=8.5, fontweight="bold")
 
 
+def fine_phase_paths(runs, sub: int = 20):
+    """Exact continuous plant path between the 10 ms control updates -- the
+    paper's Fig. 10 drawing convention. The controller applies each sample's
+    voltage for the whole sample (ZOH); the continuous plant moves smoothly
+    inside the sample and changes direction at every update, which is what
+    gives Fig. 10 its stepped texture. 20 sub-steps per 10 ms sample.
+    """
+    from twip.model import continuous_matrices
+    from scipy.linalg import expm
+    Ac, Bc = continuous_matrices(Params())
+    aug = np.zeros((6, 6))
+    aug[:4, :4] = Ac
+    aug[:4, 4:] = Bc
+    Msub = expm(aug * (T0 / sub))
+    out = {}
+    for n in NAMES:
+        X, U = runs[n]["X"], runs[n]["U"]
+        pts = np.empty((len(U) * sub + 1, 4))
+        pts[0] = X[0]
+        x = X[0].copy()
+        i = 1
+        for k in range(len(U)):
+            st = np.concatenate([x, U[k]])
+            for _ in range(sub):
+                st = Msub @ st
+                pts[i] = st[:4]
+                i += 1
+            x = st[:4]
+        out[n] = pts
+    return out
+
+
 def fig_a() -> None:
     runs = run_all(disturbance=None)                      # Sec.-1 configs
     t = np.arange(N_STEPS + 1) * T0
@@ -178,39 +210,22 @@ def fig_a() -> None:
     ax1.legend(frameon=False, fontsize=9, loc="upper right", labelcolor=INK2)
 
     # -- phase portrait (paper Fig. 10 analogue) -------------------------- --
+    # drawn the paper's way: continuous plant path under zero-order-hold
+    # control, so every 10 ms update appears as a corner in the curve
+    paths = fine_phase_paths(runs)
     for n in NAMES:
-        ax2.plot(runs[n]["X"][:, 1], runs[n]["X"][:, 3], color=COLORS[n],
-                 lw=2, label=n)
+        pth = paths[n]
+        ax2.plot(pth[:, 1], pth[:, 3], color=COLORS[n], lw=1.3, label=n)
     ax2.axhline(0, color="#c3c2b7", lw=1)
     ax2.set_xlim(*PHASE_X)
     ax2.set_ylim(*PHASE_Y)
     ax2.set_xlabel("pitch angle ψ [rad]", color=INK2)
     ax2.set_ylabel("pitch rate ψ̇ [rad/s]", color=INK2)
     ax2.set_title("phase portrait, spiralling into the origin\n"
-                  "(paper Fig. 10 analogue)", color=INK, fontsize=10.5,
+                  "(paper Fig. 10 analogue — continuous path)", color=INK, fontsize=10.5,
                   loc="left")
     style(ax2)
     ax2.legend(frameon=False, fontsize=9, loc="lower right", labelcolor=INK2)
-    # inset: the final spirals are invisible at full scale -- zoom the
-    # origin region (paper Fig. 10 shows the same nested-loop structure)
-    ax_in = ax2.inset_axes([0.075, 0.60, 0.44, 0.36])
-    for n in NAMES:
-        ax_in.plot(runs[n]["X"][:, 1], runs[n]["X"][:, 3], color=COLORS[n],
-                   lw=1.4)
-    ax_in.axhline(0, color="#c3c2b7", lw=0.8)
-    ax_in.axvline(0, color="#c3c2b7", lw=0.8)
-    ax_in.set_xlim(-0.030, 0.105)
-    ax_in.set_ylim(-0.60, 0.15)
-    ax_in.set_title("zoom: near the origin", fontsize=7.5, color=INK2,
-                    loc="left")
-    ax_in.tick_params(labelsize=7, colors=MUTED)
-    for sp in ax_in.spines.values():
-        sp.set_color("#c3c2b7")
-        sp.set_visible(True)
-    ax_in.set_facecolor("#fcfcfb")
-    ax_in.grid(True, color=GRID, lw=0.6)
-    ax_in.set_axisbelow(True)
-
     OUT_FIGS.mkdir(parents=True, exist_ok=True)
     fig.savefig(OUT_FIGS / "fig_a_pitch_phase.png", dpi=200)
     plt.close(fig)
