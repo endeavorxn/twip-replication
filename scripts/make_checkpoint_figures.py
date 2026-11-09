@@ -151,12 +151,17 @@ def label_line(ax, x, y, text, dx=6, dy=0):
                 color=INK2, fontsize=8.5, fontweight="bold")
 
 
-def fine_phase_paths(runs, sub: int = 20):
+def fine_phase_paths(sub: int = 20):
     """Exact continuous plant path between the 10 ms control updates -- the
-    paper's Fig. 10 drawing convention. The controller applies each sample's
-    voltage for the whole sample (ZOH); the continuous plant moves smoothly
-    inside the sample and changes direction at every update, which is what
-    gives Fig. 10 its stepped texture. 20 sub-steps per 10 ms sample.
+    paper's Fig. 10 drawing convention, simulated as the TRUE closed loop:
+    at every sample the controller is re-invoked with the current state (the
+    feedback correction), and the continuous plant is propagated over the
+    sample interval under that zero-order-hold voltage in `sub` sub-steps.
+
+    On an open-loop unstable plant (pole 1.0703), replaying a recorded input
+    sequence instead of closing the feedback loop lets any perturbation grow
+    along that pole (~7% per sample) -- so this must be a closed-loop hybrid
+    simulation, not an open-loop replay.
     """
     from twip.model import continuous_matrices
     from scipy.linalg import expm
@@ -165,21 +170,27 @@ def fine_phase_paths(runs, sub: int = 20):
     aug[:4, :4] = Ac
     aug[:4, 4:] = Bc
     Msub = expm(aug * (T0 / sub))
+    _, _, _, K, _, _, _, smc, new_pid = build_designs()
+    ctrls = {"PID": new_pid(), "LQR": LQRController(K), "SMC": smc}
     out = {}
     for n in NAMES:
-        X, U = runs[n]["X"], runs[n]["U"]
-        pts = np.empty((len(U) * sub + 1, 4))
-        pts[0] = X[0]
-        x = X[0].copy()
-        i = 1
-        for k in range(len(U)):
-            st = np.concatenate([x, U[k]])
+        c = ctrls[n]
+        u_sat = U_SAT_PRIMARY[n]
+        x = X0.copy()
+        pts = [x.copy()]
+        for k in range(N_STEPS):
+            u = np.asarray(c(x, k), float).ravel()
+            if u.size == 1:
+                u = np.array([float(u[0]), float(u[0])])
+            if u_sat is not None:
+                u = np.clip(u, -u_sat, u_sat)
+            st = np.concatenate([x, u])
             for _ in range(sub):
                 st = Msub @ st
-                pts[i] = st[:4]
-                i += 1
+                pts.append(st[:4])
             x = st[:4]
-        out[n] = pts
+            pts.append(x.copy())
+        out[n] = np.array(pts)
     return out
 
 
@@ -212,7 +223,7 @@ def fig_a() -> None:
     # -- phase portrait (paper Fig. 10 analogue) -------------------------- --
     # drawn the paper's way: continuous plant path under zero-order-hold
     # control, so every 10 ms update appears as a corner in the curve
-    paths = fine_phase_paths(runs)
+    paths = fine_phase_paths()
     for n in NAMES:
         pth = paths[n]
         ax2.plot(pth[:, 1], pth[:, 3], color=COLORS[n], lw=1.3, label=n)
